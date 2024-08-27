@@ -4,8 +4,12 @@ export default {
     theme: {
         extend: {
             colors: {
-                default: "#F95700"
-            }
+                default: "#F95700",
+            },
+            screens: {
+                sm: "620px",
+                xs: "430px",
+            },
         },
     },
     plugins: [],
