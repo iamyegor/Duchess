@@ -11,7 +11,7 @@ export default function FooterSectionComponent({ section }: FooterSectionProps) 
             <h1 className="text-lg font-medium">{section.name}</h1>
             <div className="flex flex-col space-y-4">
                 {section.links.map((link) => (
-                    <Link key={link.name} to={link.href}>
+                    <Link key={link.name} to={link.href} className="hover:text-neutral-300">
                         {link.name}
                     </Link>
                 ))}

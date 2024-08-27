@@ -12,7 +12,7 @@ interface HeaderLinkProps {
 export default function HeaderLink({ to, children, onMouseEnter, onMouseLeave, onClick }: HeaderLinkProps) {
     return (
         <button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick}>
-            <Link to={to} className="text-sm">
+            <Link to={to} className="text-sm hover:text-neutral-300">
                 {children}
             </Link>
         </button>

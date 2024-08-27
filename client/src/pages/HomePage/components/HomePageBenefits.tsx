@@ -1,10 +1,10 @@
 import gymImage from "@/assets/homePage/gym.jpg";
-import DumbbellImage from "@/assets/homePage/dumbbell.svg?react";
-import GradCapImage from "@/assets/homePage/grad-cap.svg?react";
-import LiftingDumbbellImage from "@/assets/homePage/lifting-dumbbell.svg?react";
-import PearImage from "@/assets/homePage/pear.svg?react";
-import PersonImage from "@/assets/homePage/person.svg?react";
-import RainbowImage from "@/assets/homePage/rainbow.svg?react";
+import DumbbellSvg from "@/assets/homePage/dumbbell.svg?react";
+import GradCapSvg from "@/assets/homePage/grad-cap.svg?react";
+import LiftingDumbbellSvg from "@/assets/homePage/lifting-dumbbell.svg?react";
+import PearSvg from "@/assets/homePage/pear.svg?react";
+import PersonSvg from "@/assets/homePage/person.svg?react";
+import RainbowSvg from "@/assets/homePage/rainbow.svg?react";
 
 export default function HomePageBenefits() {
     const benefitItemClass = "flex items-center space-x-3";
@@ -25,27 +25,27 @@ export default function HomePageBenefits() {
                     </h1>
                     <ul className="text-sm xs:text-base sm:text-xl font-medium space-y-4">
                         <li className={benefitItemClass}>
-                            <DumbbellImage className={benefitItemImageClass} />
+                            <DumbbellSvg className={benefitItemImageClass} />
                             <p>Уникальные тренировки</p>
                         </li>
                         <li className={benefitItemClass}>
-                            <PersonImage className={benefitItemImageClass} />
+                            <PersonSvg className={benefitItemImageClass} />
                             <p>Индивидуальный подход</p>
                         </li>
                         <li className={benefitItemClass}>
-                            <GradCapImage className={benefitItemImageClass} />
+                            <GradCapSvg className={benefitItemImageClass} />
                             <p>Профессиональные тренера</p>
                         </li>
                         <li className={benefitItemClass}>
-                            <LiftingDumbbellImage className={benefitItemImageClass} />
+                            <LiftingDumbbellSvg className={benefitItemImageClass} />
                             <p>Современное оборудование</p>
                         </li>
                         <li className={benefitItemClass}>
-                            <RainbowImage className={benefitItemImageClass} />
+                            <RainbowSvg className={benefitItemImageClass} />
                             <p>Приятную атмосферу</p>
                         </li>
                         <li className={benefitItemClass}>
-                            <PearImage className={benefitItemImageClass} />
+                            <PearSvg className={benefitItemImageClass} />
                             <p>Грамотный дюшес</p>
                         </li>
                     </ul>

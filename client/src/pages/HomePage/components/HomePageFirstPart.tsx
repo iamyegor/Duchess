@@ -2,9 +2,9 @@ import girlImage from "@/assets/homePage/home-page-girl.png";
 
 export default function HomePageFirstPart() {
     return (
-        <div className="w-full h-[500px] sm:h-[600px] bg-default flex items-center justify-center md:justify-between lg:justify-center space-x-0 lg:space-x-20 px-10">
+        <div className="w-full h-[500px] sm:h-[650px] bg-default flex items-center justify-center md:justify-between lg:justify-center space-x-0 lg:space-x-20 px-10">
             <div className="space-y-7 max-w-full md:max-w-[350px] lg:max-w-[500px]">
-                <h1 className="text-[28px] xs:text-[40px] lg:text-[48px] font-semibold">
+                <h1 className="text-[28px] xs:text-[40px] lg:text-5.5xl font-semibold">
                     ЛУЧШИЙ СПОРТЗАЛ МИРА
                 </h1>
                 <p className="text-base xs:text-lg md:text-base lg:text-lg">

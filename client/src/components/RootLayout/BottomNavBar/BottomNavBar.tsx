@@ -1,5 +1,5 @@
-import LocationSvg from "@/assets/bottomNavBar/location.svg?react";
-import PhoneSvg from "@/assets/bottomNavBar/phone.svg?react";
+import LocationSvg from "@/assets/common/location.svg?react";
+import PhoneSvg from "@/assets/bottomNavBar/ringing-phone.svg?react";
 import BurgerMenuSvg from "@/assets/common/burger-menu.svg?react";
 import React, { useState } from "react";
 import BurgerMenuDrawer from "@/components/RootLayout/BurgerMenuDrawer.tsx";
