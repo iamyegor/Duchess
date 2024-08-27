@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { routes } from "@/lib/routes.tsx";
 import { worker } from "@/lib/msw/worker.ts";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const queryClient = new QueryClient();
 

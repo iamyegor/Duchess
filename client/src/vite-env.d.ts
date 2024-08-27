@@ -7,7 +7,7 @@ interface ImportMeta {
     readonly env: ImportMetaEnv;
 }
 
-declare module "*.svg" {
+declare module "*.svg?react" {
     import * as React from "react";
 
     export const ReactComponent: React.FunctionComponent<

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CloseSvg from "@/assets/common/close.svg?react";
+import CloseSvg from "@/assets/common/small-cross.svg?react";
 
 interface BurgerMenuProps {
     onClose: () => void;

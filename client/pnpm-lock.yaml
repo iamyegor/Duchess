@@ -44,6 +44,9 @@ importers:
       svger:
         specifier: 0.0.1-beta.1
         version: 0.0.1-beta.1
+      swiper:
+        specifier: ^11.1.10
+        version: 11.1.10
       vite-plugin-svgr:
         specifier: ^4.2.0
         version: 4.2.0(rollup@4.20.0)(typescript@5.5.4)(vite@5.3.5(@types/node@22.5.0))
@@ -1822,6 +1825,10 @@ packages:
 
   svger@0.0.1-beta.1:
     resolution: {integrity: sha512-fzUnwqD3tgN9aAiK0g2MHrU84gl6H0uaU+UwvDy1MaqledQ60BFVdxVrnRHY6bbt6ZaX7AFzPryAYTJf37mFqQ==}
+
+  swiper@11.1.10:
+    resolution: {integrity: sha512-pAVM6vCb6bumj2B9aSh67l3wP1j5YR8dPQM1YhQKMpnBc33vs+RpyVz6NZYZl/ZopCBSYbbWK5nvESwbmU0QXQ==}
+    engines: {node: '>= 4.7.0'}
 
   tailwindcss@3.4.7:
     resolution: {integrity: sha512-rxWZbe87YJb4OcSopb7up2Ba4U82BoiSGUdoDr3Ydrg9ckxFS/YWsvhN323GMcddgU65QRy7JndC7ahhInhvlQ==}
@@ -3717,6 +3724,8 @@ snapshots:
   svg-parser@2.0.4: {}
 
   svger@0.0.1-beta.1: {}
+
+  swiper@11.1.10: {}
 
   tailwindcss@3.4.7:
     dependencies:

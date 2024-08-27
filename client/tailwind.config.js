@@ -5,7 +5,8 @@ export default {
         extend: {
             colors: {
                 default: "#F95700",
-                "default-l": "#fb923c",
+                "default-light": "#ff6614",
+                "default-lighter": "#ff842b",
                 "default-dark": "#e24f00",
             },
             screens: {
