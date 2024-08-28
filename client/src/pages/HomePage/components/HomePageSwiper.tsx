@@ -40,7 +40,11 @@ export default function HomePageSwiper({ uniqueValue, children, style }: CustomS
             >
                 {children}
             </Swiper>
-            <SubscriptionSliderArrow uniqueValue={uniqueValue} direction="left" isShown={!isBeginning} />
+            <SubscriptionSliderArrow
+                uniqueValue={uniqueValue}
+                direction="left"
+                isShown={!isBeginning}
+            />
             <SubscriptionSliderArrow uniqueValue={uniqueValue} direction="right" isShown={!isEnd} />
         </div>
     );

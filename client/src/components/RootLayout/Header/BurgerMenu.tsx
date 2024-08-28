@@ -8,7 +8,7 @@ interface BurgerMenuProps {
 export default function BurgerMenu({ onClose }: BurgerMenuProps) {
     return (
         <div className="w-full h-full p-10 py-8 space-y-10">
-            <div className="flex items-center w-full justify-between">
+            <div className="flex items-center w-full justify-between text-sm xs:text-base">
                 <p className="text-nowrap">+7 (999) 999 99 99</p>
                 <button className="flex items-center" onClick={onClose}>
                     <CloseSvg className="fill-default w-7 h-7" />
