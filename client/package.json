@@ -23,7 +23,8 @@
     "react-router-dom": "^6.26.0",
     "svger": "0.0.1-beta.1",
     "swiper": "^11.1.10",
-    "vite-plugin-svgr": "^4.2.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "ymap3-components": "^1.1.6"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

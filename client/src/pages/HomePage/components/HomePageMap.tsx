@@ -5,6 +5,7 @@ import PhoneSvg from "@/assets/homePage/phone.svg?react";
 import TimeSvg from "@/assets/homePage/time.svg?react";
 import MoneySvg from "@/assets/homePage/money.svg?react";
 import { Link } from "react-router-dom";
+import Map from "./Map";
 
 export default function HomePageMap() {
     const items = [
@@ -31,7 +32,11 @@ export default function HomePageMap() {
     ];
 
     return (
-        <div className="h-[700px] flex justify-center md:justify-start p-6 xs:p-10">
+        <div className="flex justify-center md:justify-start p-10">
+            <div className="h-[600px] w-[600px]">
+                <Map />
+            </div>
+
             <div className="bg-black/85 w-full max-w-[500px] h-full rounded-xl p-8 flex flex-col justify-between">
                 <div className="space-y-4">
                     <SelectComponent values={["Москва", "Санкт-Петербург"]} />
@@ -39,10 +44,7 @@ export default function HomePageMap() {
                 </div>
                 <div className="space-y-5 text-lg">
                     {items.map((item, index) => (
-                        <div
-                            key={index}
-                            className="flex items-center space-x-3 text-sm xs:text-base"
-                        >
+                        <div key={index} className="flex items-center space-x-3">
                             <item.image className="fill-default w-6 h-6 flex-shrink-0" />
                             <p>{item.text}</p>
                         </div>
