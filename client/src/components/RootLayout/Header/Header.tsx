@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <header className="hidden lg:block fixed top-0 left-0 right-0 py-3 px-4 md:px-8 z-20 bg-black">
-            <div className="max-w-[1500px] mx-auto flex justify-between items-center">
+            <div className="container flex justify-between items-center">
                 <BurgerMenuDrawer
                     burgerMenuOpen={burgerMenuOpen}
                     setBurgerMenuOpen={setBurgerMenuOpen}

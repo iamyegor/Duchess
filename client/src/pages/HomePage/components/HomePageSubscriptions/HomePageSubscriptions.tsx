@@ -11,7 +11,7 @@ export default function HomePageSubscriptions() {
     const { subscriptions } = useSubscriptions({ selectedPaymentType });
 
     return (
-        <div className="w-full flex flex-col items-start justify-start py-8 px-8 sm:py-12 sm:px-16 space-y-8">
+        <div className="container flex flex-col items-start justify-start py-8 sm:py-12 space-y-8">
             <h1 className="font-medium text-4xl">АБОНЕМЕНТЫ</h1>
             <nav className="w-full max-w-full lg:max-w-[600px] flex flex-col sm:flex-row rounded-xl bg-black border border-neutral-400 text-white p-2 space-y-2 sm:space-y-0 space-x-0 sm:space-x-2">
                 <PaymentTypeSwitcher

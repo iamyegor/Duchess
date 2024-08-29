@@ -47,13 +47,15 @@ export default function Footer() {
     ];
 
     return (
-        <div className="p-8 flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between">
-            {sections.map((section, index) => (
-                <>
-                    <FooterSectionComponent key={section.name} section={section} />
-                    {index != sections.length -1 && <hr className="block lg:hidden"/>}
-                </>
-            ))}
-        </div>
+        <footer className="p-8">
+            <div className="container flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between">
+                {sections.map((section, index) => (
+                    <>
+                        <FooterSectionComponent key={section.name} section={section} />
+                        {index != sections.length - 1 && <hr className="block lg:hidden" />}
+                    </>
+                ))}
+            </div>
+        </footer>
     );
 }

@@ -32,8 +32,8 @@ export default function HomePageMap() {
     ];
 
     return (
-        <div className="flex justify-center md:justify-start p-10">
-            <div className="h-[600px] w-[600px]">
+        <div className="relative container flex justify-center md:justify-start p-10">
+            <div className="absolute inset-0">
                 <Map />
             </div>
 
