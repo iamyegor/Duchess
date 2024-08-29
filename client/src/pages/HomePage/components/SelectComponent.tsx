@@ -3,8 +3,8 @@ import { useState } from "react";
 import ArrowDownSvg from "@/assets/homePage/arrow-down.svg?react";
 
 const StyledSelect = styled(Select)({
-    backgroundColor: "#333",
-    color: "#fff",
+    backgroundColor: "#262626",
+    color: "#e5e5e5",
     borderRadius: "12px",
     padding: "8px 16px",
     ".MuiOutlinedInput-notchedOutline": {
