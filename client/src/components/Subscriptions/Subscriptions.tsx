@@ -1,18 +1,18 @@
 import { useState } from "react";
 import PaymentType from "@/pages/HomePage/types/PaymentType.ts";
-import PaymentTypeSwitcher from "@/pages/HomePage/components/HomePageSubscriptions/components/PaymentTypeSwitcher.tsx";
-import SubscriptionComponent from "@/pages/HomePage/components/HomePageSubscriptions/components/SubscriptionComponent.tsx";
-import useSubscriptions from "@/pages/HomePage/components/HomePageSubscriptions/hooks/useSubscriptions.ts";
+import PaymentTypeSwitcher from "@/components/Subscriptions/components/PaymentTypeSwitcher.tsx";
+import SubscriptionComponent from "@/components/Subscriptions/components/SubscriptionComponent.tsx";
+import useSubscriptions from "@/components/Subscriptions/hooks/useSubscriptions.ts";
 import { SwiperSlide } from "swiper/react";
 import HomePageSwiper from "@/pages/HomePage/components/HomePageSwiper.tsx";
 
-export default function HomePageSubscriptions() {
+export default function Subscriptions() {
     const [selectedPaymentType, setSelectedPaymentType] = useState<PaymentType>("ежемесячно");
     const { subscriptions } = useSubscriptions({ selectedPaymentType });
 
     return (
-        <div className="container flex flex-col items-start justify-start py-8 sm:py-12 space-y-8">
-            <h1 className="font-medium text-4xl">АБОНЕМЕНТЫ</h1>
+        <div className="container flex flex-col items-start justify-start py-8 space-y-8">
+            <h1 className="font-medium w-full text-center sm:text-left text-4xl">АБОНЕМЕНТЫ</h1>
             <nav className="w-full max-w-full lg:max-w-[600px] flex flex-col sm:flex-row rounded-xl bg-black border border-neutral-400 text-white p-2 space-y-2 sm:space-y-0 space-x-0 sm:space-x-2">
                 <PaymentTypeSwitcher
                     selectedType={selectedPaymentType}

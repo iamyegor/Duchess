@@ -1,7 +1,7 @@
 import { Navigation } from "swiper/modules";
 import React, { useState } from "react";
 import { Swiper } from "swiper/react";
-import SubscriptionSliderArrow from "@/pages/HomePage/components/HomePageSubscriptions/components/SubscriptionSliderArrow.tsx";
+import SubscriptionSliderArrow from "@/components/Subscriptions/components/SubscriptionSliderArrow.tsx";
 
 interface CustomSwiperProps {
     uniqueValue: string;

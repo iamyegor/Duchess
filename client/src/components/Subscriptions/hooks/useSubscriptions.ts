@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PaymentType from "@/pages/HomePage/types/PaymentType.ts";
-import Subscriptions from "@/pages/HomePage/components/HomePageSubscriptions/types/Subscriptions.ts";
+import Subscriptions from "@/components/Subscriptions/types/Subscriptions.ts";
 
 const monthlySubscriptions = {
     basicSubscription: {

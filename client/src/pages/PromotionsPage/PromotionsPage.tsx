@@ -7,9 +7,9 @@ function PromotionsPage() {
                 <div className="flex justify-center">
                     <DuchessLogo />
                 </div>
-
+            
                 <h1 className="text-[32px] font-medium pt-[50px]">АКЦИИ</h1>
-
+            
                 <div>
                     <div>
                         <img src="" alt="" />

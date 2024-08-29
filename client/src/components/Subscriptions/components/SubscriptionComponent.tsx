@@ -1,4 +1,4 @@
-import Subscription from "@/pages/HomePage/components/HomePageSubscriptions/types/Subscription.ts";
+import Subscription from "@/components/Subscriptions/types/Subscription.ts";
 import PaymentType from "@/pages/HomePage/types/PaymentType.ts";
 import CheckSvg from "@/assets/common/check.svg?react";
 import TrophySvg from "@/assets/homePage/trophy.svg?react";
@@ -33,7 +33,7 @@ export default function SubscriptionComponent({
             )}
             <div className="space-y-4 mb-12 mt-2">
                 <h3 className="text-2xl font-medium">{subscriptionComponent.title}</h3>
-                <ul className={`text-sm xs:text-base space-y-3 ${className}`}>
+                <ul className={`text-sm xs:text-base space-y-4 ${className}`}>
                     {benefits.map((benefit, index) => (
                         <li key={index} className="text-white flex items-center space-x-3 ml-1">
                             <CheckSvg className="fill-default w-5 h-5 mt-1 flex-shrink-0" />

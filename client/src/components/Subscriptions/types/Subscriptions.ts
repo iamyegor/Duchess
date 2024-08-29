@@ -1,4 +1,4 @@
-import Subscription from "@/pages/HomePage/components/HomePageSubscriptions/types/Subscription.ts";
+import Subscription from "@/components/Subscriptions/types/Subscription.ts";
 
 export default interface Subscriptions {
     basicSubscription: Subscription;
