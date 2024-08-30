@@ -6,7 +6,7 @@ import PearSvg from "@/assets/homePage/pear.svg?react";
 import PersonSvg from "@/assets/homePage/person.svg?react";
 import RainbowSvg from "@/assets/homePage/rainbow.svg?react";
 
-export default function HomePageBenefits() {
+export default function BenefitsSection() {
     const benefitItemClass = "flex items-center space-x-3";
     const benefitItemImageClass = "fill-white w-6 h-6";
 
@@ -18,7 +18,7 @@ export default function HomePageBenefits() {
                 className="w-full h-full object-cover absolute inset-0 opacity-60"
             />
             <div className="relative z-10 w-full h-full p-10">
-                <div className="container flex justify-center md:justify-end items-center">
+                <div className="container flex justify-center md:justify-end items-center h-full">
                     <div className="h-full bg-default p-7 sm:p-10 rounded-xl space-y-6 xs:space-y-10 border border-default-lighter flex flex-col justify-center">
                         <h1 className="text-3xl xs:text-4.5xl sm:text-5xl font-semibold flex flex-col">
                             <span className="text-black">С DUCHESS FITNESS</span>{" "}

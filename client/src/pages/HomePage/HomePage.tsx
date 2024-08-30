@@ -1,5 +1,5 @@
 import HomePageFirstPart from "@/pages/HomePage/components/HomePageFirstPart.tsx";
-import HomePageBenefits from "@/pages/HomePage/components/HomePageBenefits.tsx";
+import BenefitsSection from "@/pages/HomePage/components/BenefitsSection.tsx";
 import HomePageMap from "@/pages/HomePage/components/HomePageMap.tsx";
 import Subscriptions from "@/components/Subscriptions/Subscriptions.tsx";
 import DuchessLogo from "@/components/ui/DuchessLogo.tsx";
@@ -10,7 +10,7 @@ export default function HomePage() {
         <div className="flex flex-col bg-default h-full">
             <DuchessLogo />
             <HomePageFirstPart />
-            <HomePageBenefits />
+            <BenefitsSection />
             <HomePageMap />
             <Subscriptions />
             <HomePageAboutUs />

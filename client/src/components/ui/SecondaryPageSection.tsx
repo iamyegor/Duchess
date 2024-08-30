@@ -6,15 +6,15 @@ interface ProgramsPageSectionProps {
     title: string;
     content: string;
     bgColor: "orange" | "black";
-    alignment: "left" | "right";
+    imageAlignment: "left" | "right";
 }
 
-export default function ProgramsPageSection({
+export default function SecondaryPageSection({
     image,
     title,
     content,
     bgColor,
-    alignment,
+    imageAlignment,
 }: ProgramsPageSectionProps) {
     return (
         <div
@@ -25,15 +25,15 @@ export default function ProgramsPageSection({
         >
             <div
                 className={classNames(
-                    "flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-x-16 container lg:items-center",
+                    "flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-x-8 container lg:items-center",
                     {
-                        "lg:flex-row-reverse": alignment === "left",
+                        "lg:flex-row-reverse": imageAlignment === "left",
                     },
                 )}
             >
                 <div className="flex-1 text-white space-y-8">
-                    <h2 className="text-3xl sm:text-4xl font-semibold">{title}</h2>
-                    <p className="text-xl sm:text-2xl font-medium">{content}</p>
+                    <h2 className="text-3xl sm:text-5xl font-semibold">{title}</h2>
+                    <p className="text-xl font-medium">{content}</p>
                 </div>
                 <div className="flex-1 h-min" style={{ aspectRatio: "16/10" }}>
                     <img

@@ -4,6 +4,7 @@ import PromotionsPage from "@/pages/PromotionsPage/PromotionsPage";
 import SubscriptionsPage from "@/pages/SubscriptionsPage/SubscriptionsPage.tsx";
 import SubscriptionFormPage from "@/pages/SubscriptionFormPage/SubscriptionFormPage.tsx";
 import ProgramsPage from "@/pages/ProgramsPage/ProgramsPage.tsx";
+import BeginnersPage from "@/pages/BeginnersPage/BeginnersPage.tsx";
 
 export const routes = [
     {
@@ -15,20 +16,24 @@ export const routes = [
                 element: <HomePage />,
             },
             {
-                path: "/promotions",
+                path: "promotions",
                 element: <PromotionsPage />,
             },
             {
-                path: "/subscriptions",
+                path: "subscriptions",
                 element: <SubscriptionsPage />,
             },
             {
-                path: "/subscription-form",
+                path: "subscription-form",
                 element: <SubscriptionFormPage />,
             },
             {
                 path: "programs",
                 element: <ProgramsPage />,
+            },
+            {
+                path: "beginners",
+                element: <BeginnersPage />,
             },
         ],
     },
