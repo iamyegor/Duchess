@@ -1,0 +1,65 @@
+import { LngLat } from "@yandex/ymaps3-types";
+import { YMapLocation } from "@yandex/ymaps3-types/imperative/YMap";
+
+export const defaultLocation: YMapLocation = {
+    center: [37.50903792972745, 55.755115231627215],
+    zoom: 12,
+};
+
+export const locations: City[] = [
+    {
+        name: "Москва",
+        markers: [
+            {
+                name: "Орехово",
+                coordinates: [37.5792715107169, 55.77839703854898],
+                isSelected: false,
+                address:
+                    "г. Москва, м. Прокшино ТЦ «Сиеста» вн.тер.г. поселение Сосенское, ул. Николо-Хованская, 7с1",
+                phone: "+7 (999) 999 99 99",
+                priceForMonth: 1690,
+            },
+        ],
+        laptopCenterCoordinates: [37.51697483915114, 55.755394740843464],
+        coordinates: [37.61997166532299, 55.755394740843464],
+    },
+    {
+        name: "Санкт-Петербург",
+        markers: [
+            {
+                name: "СИЛА",
+                coordinates: [30.284028636651858, 59.94385772688106],
+                isSelected: false,
+                address: "Санкт-Петербург, 3-я линия Васильевского острова, 30-32",
+                phone: "+7 (888) 888 88 88",
+                priceForMonth: 1500,
+            },
+            {
+                name: "ТОП",
+                coordinates: [30.22393283588901, 59.95386055731349],
+                isSelected: false,
+                address: "Санкт-Петербург, улица Кораблестроителей, 35к5",
+                phone: "+7 (777) 777 77 77",
+                priceForMonth: 1300,
+            },
+        ],
+        laptopCenterCoordinates: [30.20992479422894, 59.938879768360074],
+        coordinates: [30.31051836112347, 59.940257893908125],
+    },
+];
+
+export interface City {
+    name: string;
+    markers: Marker[];
+    laptopCenterCoordinates: LngLat;
+    coordinates: LngLat;
+}
+
+export interface Marker {
+    name: string;
+    coordinates: LngLat;
+    isSelected: boolean;
+    address: string;
+    phone: string;
+    priceForMonth: number;
+}
