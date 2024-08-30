@@ -20,6 +20,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.52.1
         version: 5.52.1(react@18.3.1)
+      '@types/react-transition-group':
+        specifier: ^4.4.11
+        version: 4.4.11
       axios:
         specifier: ^1.7.3
         version: 1.7.3
@@ -41,6 +44,9 @@ importers:
       react-router-dom:
         specifier: ^6.26.0
         version: 6.26.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-transition-group:
+        specifier: ^4.4.5
+        version: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       svger:
         specifier: 0.0.1-beta.1
         version: 0.0.1-beta.1

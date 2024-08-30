@@ -5,6 +5,7 @@ import SubscriptionsPage from "@/pages/SubscriptionsPage/SubscriptionsPage.tsx";
 import SubscriptionFormPage from "@/pages/SubscriptionFormPage/SubscriptionFormPage.tsx";
 import ProgramsPage from "@/pages/ProgramsPage/ProgramsPage.tsx";
 import BeginnersPage from "@/pages/BeginnersPage/BeginnersPage.tsx";
+import FaqPage from "@/pages/FaqPage/FaqPage.tsx";
 
 export const routes = [
     {
@@ -34,6 +35,10 @@ export const routes = [
             {
                 path: "beginners",
                 element: <BeginnersPage />,
+            },
+            {
+                path: "faq",
+                element: <FaqPage />,
             },
         ],
     },
