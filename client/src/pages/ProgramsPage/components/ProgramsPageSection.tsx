@@ -1,0 +1,48 @@
+import React from "react";
+import classNames from "classnames";
+
+interface ProgramsPageSectionProps {
+    image: string;
+    title: string;
+    content: string;
+    bgColor: "orange" | "black";
+    alignment: "left" | "right";
+}
+
+export default function ProgramsPageSection({
+    image,
+    title,
+    content,
+    bgColor,
+    alignment,
+}: ProgramsPageSectionProps) {
+    return (
+        <div
+            className={classNames("py-16", {
+                "bg-default": bgColor === "orange",
+                "bg-black": bgColor === "black",
+            })}
+        >
+            <div
+                className={classNames(
+                    "flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-x-16 container lg:items-center",
+                    {
+                        "lg:flex-row-reverse": alignment === "left",
+                    },
+                )}
+            >
+                <div className="flex-1 text-white space-y-8">
+                    <h2 className="text-3xl sm:text-4xl font-semibold">{title}</h2>
+                    <p className="text-xl sm:text-2xl font-medium">{content}</p>
+                </div>
+                <div className="flex-1 h-min" style={{ aspectRatio: "16/10" }}>
+                    <img
+                        src={image}
+                        alt="Section Image"
+                        className="w-full h-full object-cover rounded-xl"
+                    />
+                </div>
+            </div>
+        </div>
+    );
+}
