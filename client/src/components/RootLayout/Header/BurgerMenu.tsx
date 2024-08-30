@@ -16,12 +16,24 @@ export default function BurgerMenu({ onClose }: BurgerMenuProps) {
                 </button>
             </div>
             <div className="flex flex-col space-y-5">
-                <Link to="/gyms">Выбрать клуб</Link>
-                <Link to="/subscriptions">Абонементы</Link>
-                <Link to="/programs">Направления и программы</Link>
-                <Link to="/beginners">Для новых клиентов</Link>
-                <Link to="/promotions">Акции</Link>
-                <Link to="/faq">Частые вопросы</Link>
+                <Link to="/gyms" onClick={onClose}>
+                    Выбрать клуб
+                </Link>
+                <Link to="/subscriptions" onClick={onClose}>
+                    Абонементы
+                </Link>
+                <Link to="/programs" onClick={onClose}>
+                    Направления и программы
+                </Link>
+                <Link to="/beginners" onClick={onClose}>
+                    Для новых клиентов
+                </Link>
+                <Link to="/promotions" onClick={onClose}>
+                    Акции
+                </Link>
+                <Link to="/faq" onClick={onClose}>
+                    Частые вопросы
+                </Link>
             </div>
         </div>
     );
