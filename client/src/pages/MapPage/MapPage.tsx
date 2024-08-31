@@ -5,7 +5,7 @@ function MapPage() {
     return (
         <div className="flex flex-col bg-default h-full">
             <DuchessLogo />
-            <div className="container pt-5 pb-5">
+            <div className="container pt-8 pb-5">
                 <h3 className="text-5xl text-white font-semibold">КЛУБЫ</h3>
             </div>
             <GymSelectMap />
