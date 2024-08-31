@@ -3,13 +3,13 @@ import gymImage from "@/assets/programsPage/gym.webp";
 import trainerImage from "@/assets/programsPage/trainer.jpg";
 import spaImage from "@/assets/programsPage/spa.jpg";
 import SecondaryPageMainSection from "@/components/ui/SecondaryPageMainSection.tsx";
-import womanLiftingDumbbells from "@/assets/programsPage/woman-lifting-dumbbells.webp";
+import programsImage from "@/assets/programsPage/programs.png";
 
 export default function ProgramsPage() {
     return (
         <div className="bg-default">
             <SecondaryPageMainSection
-                img={womanLiftingDumbbells}
+                img={programsImage}
                 title="Жизнь в ритме DUCHESS FITNESS"
             />
             <SecondaryPageSection

@@ -1,4 +1,5 @@
 import DuchessLogo from "@/components/ui/DuchessLogo.tsx";
+import { Link } from "react-router-dom";
 
 interface SecondaryPageMainSectionProps {
     img: string;
@@ -15,9 +16,12 @@ export default function SecondaryPageMainSection({ img, title }: SecondaryPageMa
             <div className="z-10 container h-full flex items-end xs:items-center p-4">
                 <div className="flex flex-col justify-start lg:max-w-[650px]  space-y-8">
                     <h1 className="text-2xl xs:text-3xl sm:text-5xl font-bold mb-4">{title}</h1>
-                    <button className="px-6 py-4 border rounded-xl bg-white text-black hover:bg-gray-100 hover:shadow-2xl transition">
+                    <Link
+                        to="/gyms"
+                        className="px-6 py-4 border rounded-xl bg-white text-black hover:bg-gray-100 hover:shadow-2xl transition text-center"
+                    >
                         Купить абонемент
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
