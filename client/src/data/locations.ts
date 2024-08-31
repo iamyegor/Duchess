@@ -1,5 +1,5 @@
-import { LngLat } from "@yandex/ymaps3-types";
 import { YMapLocation } from "@yandex/ymaps3-types/imperative/YMap";
+import { City } from "@/components/ui/Map/types/City.ts";
 
 export const defaultLocation: YMapLocation = {
     center: [37.50903792972745, 55.755115231627215],
@@ -71,19 +71,3 @@ export const locations: City[] = [
         coordinates: [30.31051836112347, 59.940257893908125],
     },
 ];
-
-export interface City {
-    name: string;
-    markers: Marker[];
-    laptopCenterCoordinates: LngLat;
-    coordinates: LngLat;
-}
-
-export interface Marker {
-    name: string;
-    coordinates: LngLat;
-    isSelected: boolean;
-    address: string;
-    phone: string;
-    priceForMonth: number;
-}

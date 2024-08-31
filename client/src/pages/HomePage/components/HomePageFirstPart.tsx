@@ -1,6 +1,7 @@
 import girlImage from "@/assets/homePage/home-page-girl.png";
+import { Link } from "react-router-dom";
 
-export default function HomePageFirstPart() {
+export default function HomePageFirstPart({ onButtonClick }: { onButtonClick: () => void }) {
     return (
         <div className="container w-full flex items-end pb-7 xs:pb-0 xs:items-center justify-center md:justify-between min-h-[270px] h-screen max-h-[350px] sm:max-h-[600px] space-x-10">
             <div className="space-y-7">
@@ -11,8 +12,11 @@ export default function HomePageFirstPart() {
                     ДУМАЕТЕ КРИПТЁШЬ? НЕТ, ЭТО ДЮШЕС
                 </p>
                 <div className="flex flex-col lg:flex-row space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
-                    <button className="bg-black/70 p-4 rounded-lg flex-1 hover:shadow-xl hover:bg-black/65 transition text-sm lg:text-base">
-                        ОСТАВИТЬ ЗАЯВКУ
+                    <button
+                        onClick={onButtonClick}
+                        className="bg-black/70 p-4 rounded-lg flex-1 hover:shadow-xl hover:bg-black/65 transition text-sm lg:text-lg text-center"
+                    >
+                        Купить со скидкой
                     </button>
                 </div>
             </div>

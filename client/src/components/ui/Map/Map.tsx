@@ -1,15 +1,15 @@
-import { YMapLocation } from "@yandex/ymaps3-types/imperative/YMap";
 import * as YMaps from "@yandex/ymaps3-types";
+import { LngLat } from "@yandex/ymaps3-types";
 import {
     YMap,
-    YMapDefaultSchemeLayer,
-    YMapDefaultFeaturesLayer,
     YMapComponentsProvider,
+    YMapDefaultFeaturesLayer,
+    YMapDefaultSchemeLayer,
 } from "ymap3-components";
-import { City, Marker } from "./data/locations";
-import React, { SetStateAction, useEffect, useMemo, useRef, useState } from "react";
+import React, { SetStateAction, useEffect, useMemo, useState } from "react";
 import DuchessMapMarker from "./components/DuchessMapMarker";
-import { LngLat } from "@yandex/ymaps3-types";
+import { City } from "@/components/ui/Map/types/City.ts";
+import { Marker } from "@/components/ui/Map/types/Marker.ts";
 
 function Map({
     city,

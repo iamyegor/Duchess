@@ -6,10 +6,12 @@ import TimeSvg from "@/assets/homePage/time.svg?react";
 import MoneySvg from "@/assets/homePage/money.svg?react";
 import { Link } from "react-router-dom";
 import Map from "@/components/ui/Map/Map";
-import { City, locations, Marker } from "@/components/ui/Map/data/locations";
-import { useEffect, useMemo, useState } from "react";
+import { forwardRef, useEffect, useMemo, useState } from "react";
+import { Marker } from "@/components/ui/Map/types/Marker.ts";
+import { locations } from "@/data/locations.ts";
+import { City } from "@/components/ui/Map/types/City.ts";
 
-export default function HomePageMap() {
+const HomePageMap = forwardRef<HTMLDivElement>((_, ref) => {
     const [markers, setMarkers] = useState<Marker[]>(locations.flatMap((x) => x.markers));
     const [selectedCityName, setSelectedCityName] = useState<string>("Москва");
     const [selectedClub, setSelectedClub] = useState<Marker | null>(null);
@@ -47,7 +49,7 @@ export default function HomePageMap() {
     }, [selectedClub]);
 
     return (
-        <div className="relative block justify-center md:justify-start lg:p-10 lg:flex">
+        <div className="relative block justify-center md:justify-start lg:p-10 lg:flex" ref={ref}>
             <div className="relative lg:inset-0 lg:absolute h-[340px] lg:h-auto">
                 <Map
                     city={city}
@@ -118,7 +120,7 @@ export default function HomePageMap() {
                     )}
 
                     <Link
-                        to="/subscriptions"
+                        to={`/subscription-form?city=${selectedCityName}&gym=${selectedClub?.name}`}
                         className="bg-default w-full p-3 rounded-lg hover:bg-default-dark transition text-center"
                     >
                         Выбрать
@@ -127,4 +129,6 @@ export default function HomePageMap() {
             </div>
         </div>
     );
-}
+});
+
+export default HomePageMap;

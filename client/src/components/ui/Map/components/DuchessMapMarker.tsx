@@ -1,7 +1,8 @@
 import { YMapMarker } from "ymap3-components";
-import { Marker } from "../data/locations";
 import DuchessMarker from "@/assets/map/duchess-marker.svg";
 import SelectedDuchessMarker from "@/assets/map/selected-duchess-marker.svg";
+import { Marker } from "@/components/ui/Map/types/Marker.ts";
+import React from "react";
 
 function DuchessMapMarker({
     marker,
