@@ -94,7 +94,7 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
                         <div className="text-white space-y-5">
                             <h3 className="uppercase text-[32px]">Выберите клуб</h3>
                             <p>
-                                Spirit. Fitness — сеть технологичных фитнес-клубов с оплатой за
+                                DUCHESS FITNESS — сеть технологичных фитнес-клубов с оплатой за
                                 месяц. Наша миссия — сделать занятия спортом неотъемлемой частью
                                 жизни каждого.
                             </p>
