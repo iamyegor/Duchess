@@ -4,6 +4,7 @@ import HeaderLink from "@/components/RootLayout/Header/HeaderLink.tsx";
 import BurgerMenuSvg from "@/assets/common/burger-menu.svg?react";
 import BurgerMenuDrawer from "@/components/RootLayout/BurgerMenuDrawer.tsx";
 import logoImage from "@/assets/logo/logo-inverted.png";
+import ContactPhoneNumber from "@/components/RootLayout/Header/ContactPhoneNumber.tsx";
 
 export default function Header() {
     const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
@@ -27,10 +28,9 @@ export default function Header() {
                     <HeaderLink to="/promotions">Акции</HeaderLink>
                 </div>
                 <div className="flex items-center space-x-4 md:space-x-10">
-                    <p className="text-nowrap">+7 (999) 999 99 99</p>
+                    <ContactPhoneNumber />
                     <BurgerMenuSvg
-                        fill="white"
-                        className="w-5 h-5 hover:cursor-pointer"
+                        className="w-5 h-5 hover:cursor-pointer fill-white hover:fill-neutral-300"
                         onClick={() => setBurgerMenuOpen(true)}
                     />
                 </div>

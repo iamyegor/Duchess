@@ -69,7 +69,7 @@ export default function SubscriptionComponent({
                 </h3>
                 <div>
                     <Link
-                        to={`gyms?subscription=${subscription.title}&paymentType=${paymentType}`}
+                        to={`/gyms?subscription=${subscription.title}&paymentType=${paymentType}`}
                         className="bg-default hover:bg-default-dark block rounded-lg p-3 transition text-center"
                     >
                         Попробовать

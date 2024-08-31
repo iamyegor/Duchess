@@ -12,7 +12,7 @@ export default function Subscriptions() {
 
     return (
         <div className="container flex flex-col items-start justify-start py-8 space-y-8">
-            <h1 className="font-medium w-full text-center sm:text-left text-4xl">АБОНЕМЕНТЫ</h1>
+            <h1 className="font-medium w-full text-center sm:text-left text-5xl">АБОНЕМЕНТЫ</h1>
             <nav className="w-full max-w-full lg:max-w-[600px] flex flex-col sm:flex-row rounded-xl bg-black border border-neutral-500 text-white p-2 space-y-2 sm:space-y-0 space-x-0 sm:space-x-2">
                 <PaymentTypeSwitcher
                     selectedType={selectedPaymentType}
