@@ -1,6 +1,6 @@
 import { YMapMarker } from "ymap3-components";
-import DuchessMarker from "@/assets/map/duchess-marker.svg";
-import SelectedDuchessMarker from "@/assets/map/selected-duchess-marker.svg";
+import DuchessMarker from "@/assets/map/marker.svg";
+import SelectedDuchessMarker from "@/assets/map/selected-marker.svg";
 import { Marker } from "@/components/ui/GymSelectMap/types/Marker.ts";
 import React from "react";
 
