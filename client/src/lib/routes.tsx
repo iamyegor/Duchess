@@ -6,6 +6,7 @@ import SubscriptionFormPage from "@/pages/SubscriptionFormPage/SubscriptionFormP
 import ProgramsPage from "@/pages/ProgramsPage/ProgramsPage.tsx";
 import BeginnersPage from "@/pages/BeginnersPage/BeginnersPage.tsx";
 import FaqPage from "@/pages/FaqPage/FaqPage.tsx";
+import MapPage from "@/pages/MapPage/MapPage.tsx";
 
 export const routes = [
     {
@@ -40,6 +41,10 @@ export const routes = [
                 path: "faq",
                 element: <FaqPage />,
             },
+            {
+                path: "gyms",
+                element: <MapPage />
+            }
         ],
     },
 ];

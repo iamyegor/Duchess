@@ -1,17 +1,18 @@
-import SelectComponent from "@/pages/HomePage/components/SelectComponent.tsx";
 import DumbbellSvg from "@/assets/homePage/dumbbell.svg?react";
 import LocationSvg from "@/assets/common/location.svg?react";
 import PhoneSvg from "@/assets/homePage/phone.svg?react";
 import TimeSvg from "@/assets/homePage/time.svg?react";
 import MoneySvg from "@/assets/homePage/money.svg?react";
-import { Link } from "react-router-dom";
-import Map from "@/components/ui/Map/Map";
-import { forwardRef, useEffect, useMemo, useState } from "react";
-import { Marker } from "@/components/ui/Map/types/Marker.ts";
-import { locations } from "@/data/locations.ts";
-import { City } from "@/components/ui/Map/types/City.ts";
 
-const HomePageMap = forwardRef<HTMLDivElement>((_, ref) => {
+import { forwardRef, useEffect, useMemo, useState } from "react";
+import { Marker } from "@/components/ui/GymSelectMap/types/Marker.ts";
+import { locations } from "@/data/locations.ts";
+import { City } from "@/components/ui/GymSelectMap/types/City.ts";
+import Map from "@/components/ui/GymSelectMap/components/Map.tsx";
+import SelectComponent from "@/pages/HomePage/components/SelectComponent.tsx";
+import { Link } from "react-router-dom";
+
+const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
     const [markers, setMarkers] = useState<Marker[]>(locations.flatMap((x) => x.markers));
     const [selectedCityName, setSelectedCityName] = useState<string>("Москва");
     const [selectedClub, setSelectedClub] = useState<Marker | null>(null);
@@ -49,8 +50,11 @@ const HomePageMap = forwardRef<HTMLDivElement>((_, ref) => {
     }, [selectedClub]);
 
     return (
-        <div className="relative block justify-center md:justify-start lg:p-10 lg:flex" ref={ref}>
-            <div className="relative lg:inset-0 lg:absolute h-[340px] lg:h-auto">
+        <div
+            className="relative block justify-center items-center md:justify-start lg:p-10 lg:flex lg:h-full max-h-[1000px]"
+            ref={ref}
+        >
+            <div className="relative lg:inset-0 lg:absolute h-[340px] lg:h-full">
                 <Map
                     city={city}
                     markers={markers}
@@ -131,4 +135,4 @@ const HomePageMap = forwardRef<HTMLDivElement>((_, ref) => {
     );
 });
 
-export default HomePageMap;
+export default GymSelectMap;

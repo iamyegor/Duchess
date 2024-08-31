@@ -7,9 +7,9 @@ import {
     YMapDefaultSchemeLayer,
 } from "ymap3-components";
 import React, { SetStateAction, useEffect, useMemo, useState } from "react";
-import DuchessMapMarker from "./components/DuchessMapMarker";
-import { City } from "@/components/ui/Map/types/City.ts";
-import { Marker } from "@/components/ui/Map/types/Marker.ts";
+import DuchessMapMarker from "./DuchessMapMarker.tsx";
+import { City } from "@/components/ui/GymSelectMap/types/City.ts";
+import { Marker } from "@/components/ui/GymSelectMap/types/Marker.ts";
 
 function Map({
     city,

@@ -1,5 +1,5 @@
 import { LngLat } from "@yandex/ymaps3-types";
-import { Marker } from "@/components/ui/Map/types/Marker.ts";
+import { Marker } from "@/components/ui/GymSelectMap/types/Marker.ts";
 
 export interface City {
     name: string;

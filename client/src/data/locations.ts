@@ -1,5 +1,5 @@
 import { YMapLocation } from "@yandex/ymaps3-types/imperative/YMap";
-import { City } from "@/components/ui/Map/types/City.ts";
+import { City } from "@/components/ui/GymSelectMap/types/City.ts";
 
 export const defaultLocation: YMapLocation = {
     center: [37.50903792972745, 55.755115231627215],
