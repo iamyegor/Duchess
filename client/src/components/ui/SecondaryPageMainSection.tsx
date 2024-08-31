@@ -8,7 +8,7 @@ interface SecondaryPageMainSectionProps {
 export default function SecondaryPageMainSection({ img, title }: SecondaryPageMainSectionProps) {
     return (
         <div className="flex flex-col pt-2 items-center relative h-[650px]">
-            <DuchessLogo whiteVariant={true} />
+            <DuchessLogo />
             <div className="absolute inset-0">
                 <img src={img} alt="Основная картинка" className="w-full h-full object-cover" />
             </div>

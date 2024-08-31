@@ -23,6 +23,11 @@ export default function HomePage() {
             </div>
             <Subscriptions />
             <HomePageAboutUs />
+            <div className="bg-black pb-6">
+                <div className="container">
+                    <p>* по версии журнала Криптан Daily</p>
+                </div>
+            </div>
         </div>
     );
 }

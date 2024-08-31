@@ -4,7 +4,7 @@ import PaymentTypeSwitcher from "@/components/Subscriptions/components/PaymentTy
 import SubscriptionComponent from "@/components/Subscriptions/components/SubscriptionComponent.tsx";
 import useSubscriptions from "@/components/Subscriptions/hooks/useSubscriptions.ts";
 import { SwiperSlide } from "swiper/react";
-import HomePageSwiper from "@/pages/HomePage/components/HomePageSwiper.tsx";
+import ContentSwiper from "@/pages/HomePage/components/ContentSwiper.tsx";
 
 export default function Subscriptions() {
     const [selectedPaymentType, setSelectedPaymentType] = useState<PaymentType>("ежемесячно");
@@ -13,7 +13,7 @@ export default function Subscriptions() {
     return (
         <div className="container flex flex-col items-start justify-start py-8 space-y-8">
             <h1 className="font-medium w-full text-center sm:text-left text-4xl">АБОНЕМЕНТЫ</h1>
-            <nav className="w-full max-w-full lg:max-w-[600px] flex flex-col sm:flex-row rounded-xl bg-black border border-neutral-400 text-white p-2 space-y-2 sm:space-y-0 space-x-0 sm:space-x-2">
+            <nav className="w-full max-w-full lg:max-w-[600px] flex flex-col sm:flex-row rounded-xl bg-black border border-neutral-500 text-white p-2 space-y-2 sm:space-y-0 space-x-0 sm:space-x-2">
                 <PaymentTypeSwitcher
                     selectedType={selectedPaymentType}
                     setSelectedPaymentType={setSelectedPaymentType}
@@ -25,7 +25,7 @@ export default function Subscriptions() {
                     paymentType="ежегодно"
                 />
             </nav>
-            <HomePageSwiper uniqueValue="subscriptions" style={{ paddingTop: "24px" }}>
+            <ContentSwiper uniqueValue="subscriptions" style={{ paddingTop: "24px" }}>
                 <SwiperSlide>
                     <SubscriptionComponent
                         subscription={{ title: "Тест-драйв", currentPrice: 0 }}
@@ -80,7 +80,7 @@ export default function Subscriptions() {
                         ]}
                     />
                 </SwiperSlide>
-            </HomePageSwiper>
+            </ContentSwiper>
         </div>
     );
 }

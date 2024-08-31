@@ -1,4 +1,4 @@
-import HomePageSwiper from "@/pages/HomePage/components/HomePageSwiper.tsx";
+import ContentSwiper from "@/pages/HomePage/components/ContentSwiper.tsx";
 import { SwiperSlide } from "swiper/react";
 import AboutUsInfoCard from "@/pages/HomePage/components/HomePageAboutUs/components/AboutUsInfoCard.tsx";
 
@@ -22,19 +22,19 @@ const aboutUsContent = [
 
 export default function HomePageAboutUs() {
     return (
-        <section className="bg-black text-white py-10 px-8 xs:px-12 border-b-2 border-neutral-800">
+        <section className="bg-black text-white py-10">
             <div className="container space-y-6">
                 <div className="max-w-5xl">
                     <h1 className="text-3xl font-bold">DUCHESS - это...</h1>
                 </div>
                 <div className="w-full h-[500px] xl:h-[450px]">
-                    <HomePageSwiper uniqueValue="about-us">
+                    <ContentSwiper uniqueValue="about-us">
                         {aboutUsContent.map((item, index) => (
                             <SwiperSlide key={index}>
                                 <AboutUsInfoCard title={item.title} content={item.content} />
                             </SwiperSlide>
                         ))}
-                    </HomePageSwiper>
+                    </ContentSwiper>
                 </div>
             </div>
         </section>

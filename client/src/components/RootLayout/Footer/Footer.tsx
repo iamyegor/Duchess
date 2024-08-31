@@ -47,7 +47,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="p-8 bg-black">
+        <footer className="p-8 pt-6 bg-black border-t-2 border-neutral-800">
             <div className="container flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between">
                 {sections.map((section, index) => (
                     <>

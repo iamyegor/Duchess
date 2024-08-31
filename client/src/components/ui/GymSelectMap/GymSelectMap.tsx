@@ -69,7 +69,7 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
             </div>
 
             <div className="-mt-[50px] lg:mt-0 container">
-                <div className="lg:h-[600px] relative z-10 bg-black/85 w-full lg:max-w-[500px] rounded-xl p-8 flex flex-col justify-between space-y-10">
+                <div className="lg:h-[600px] relative z-10 bg-black/85 backdrop-blur-sm w-full lg:max-w-[500px] rounded-xl p-8 flex flex-col justify-between space-y-10">
                     <div className="space-y-4">
                         <SelectComponent
                             values={locations.map((x) => x.name)}

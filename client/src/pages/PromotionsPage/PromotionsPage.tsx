@@ -1,5 +1,6 @@
 import DuchessLogo from "@/components/ui/DuchessLogo";
 import promotionImage from "@/assets/promotionsPage/promotion.png";
+import { Link } from "react-router-dom";
 
 function PromotionsPage() {
     return (
@@ -8,10 +9,7 @@ function PromotionsPage() {
             <div className="container h-full space-y-10 flex flex-col">
                 <h1 className="text-5xl font-semibold">АКЦИИ</h1>
                 <div className="bg-black text-white rounded-xl flex h-auto md:h-[350px] lg:h-[500px] flex-col md:flex-row">
-                    <div
-                        className="flex-none "
-                        style={{ aspectRatio: "1 / 1" }}
-                    >
+                    <div className="flex-none " style={{ aspectRatio: "1 / 1" }}>
                         <img
                             src={promotionImage}
                             alt="Promotion Image"
@@ -30,12 +28,12 @@ function PromotionsPage() {
                         </div>
                         <div className="flex flex-col space-y-4 lg:space-y-0 lg:flex-row justify-between items-center">
                             <span className="text-base">Финальные скидки</span>
-                            <button
+                            <Link
+                                to="/gyms"
                                 className="bg-default hover:bg-default-dark text-black font-semibold py-2 px-7 rounded-lg w-full lg:w-auto"
-                                onClick={() => alert("Абонемент куплен!")}
                             >
                                 КУПИТЬ АБОНЕМЕНТ
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

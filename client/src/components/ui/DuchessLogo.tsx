@@ -2,24 +2,12 @@ import { Link } from "react-router-dom";
 import logoImage from "@/assets/logo/logo.png";
 import classNames from "classnames";
 
-interface DuchessLogoProps {
-    whiteVariant?: boolean;
-}
-
-export default function DuchessLogo({ whiteVariant = false }: DuchessLogoProps) {
+export default function DuchessLogo() {
     return (
-        <div className="w-full flex lg:mb-16 justify-center z-10">
-            <Link
-                to="/"
-                className={classNames("flex lg:hidden justify-center p-4", {
-                    "bg-white rounded-full ": whiteVariant,
-                })}
-            >
-                <img
-                    className={classNames("w-44 h-44 rounded-full", { "!w-24 !h-24": whiteVariant })}
-                    src={logoImage}
-                    alt="Duchess Fitness"
-                />
+        <div className="w-full flex mt-1 lg:mt-14 justify-center z-10">
+            <Link to="/" className={classNames("flex flex-col lg:hidden justify-center", {})}>
+                <img className="w-44" src={logoImage} alt="Duchess Fitness" />
+                <p className="text-center font-semibold text-4xl">DUCHESS</p>
             </Link>
         </div>
     );

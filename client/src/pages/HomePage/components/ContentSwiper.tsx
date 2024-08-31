@@ -9,7 +9,7 @@ interface CustomSwiperProps {
     children: React.ReactNode;
 }
 
-export default function HomePageSwiper({ uniqueValue, children, style }: CustomSwiperProps) {
+export default function ContentSwiper({ uniqueValue, children, style }: CustomSwiperProps) {
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
 
