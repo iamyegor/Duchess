@@ -10,10 +10,11 @@ import { locations } from "@/data/locations.ts";
 import { City } from "@/components/ui/GymSelectMap/types/City.ts";
 import Map from "@/components/ui/GymSelectMap/components/Map.tsx";
 import SelectComponent from "@/pages/HomePage/components/SelectComponent.tsx";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
     const [markers, setMarkers] = useState<Marker[]>(locations.flatMap((x) => x.markers));
+    const [searchParams] = useSearchParams();
     const [selectedCityName, setSelectedCityName] = useState<string>("Москва");
     const [selectedClub, setSelectedClub] = useState<Marker | null>(null);
     const [clubs, setClubs] = useState<Marker[]>(
@@ -48,6 +49,10 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
             );
         }
     }, [selectedClub]);
+
+    function getSubscriptionSearchParams() {
+        return searchParams.toString() ? `&${searchParams.toString()}` : "";
+    }
 
     return (
         <div
@@ -123,12 +128,21 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
                         </div>
                     )}
 
-                    <Link
-                        to={`/subscription-form?city=${selectedCityName}&gym=${selectedClub?.name}`}
-                        className="bg-default w-full p-3 rounded-lg hover:bg-default-dark transition text-center"
-                    >
-                        Выбрать
-                    </Link>
+                    {!selectedClub || selectedClub?.name == "Выберите зал" ? (
+                        <button
+                            disabled
+                            className="bg-neutral-600 text-neutral-300 w-full p-3 rounded-lg text-center"
+                        >
+                            Выбрать
+                        </button>
+                    ) : (
+                        <Link
+                            to={`/subscription-form?city=${selectedCityName}&gym=${selectedClub?.name}${getSubscriptionSearchParams()}`}
+                            className="bg-default w-full p-3 rounded-lg hover:bg-default-dark transition text-center"
+                        >
+                            Выбрать
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

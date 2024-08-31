@@ -4,10 +4,17 @@ import React, { useState } from "react";
 import SelectComponent from "@/pages/HomePage/components/SelectComponent.tsx";
 import PhoneNumberInput from "@/pages/SubscriptionFormPage/components/PhoneNumberInput.tsx";
 import { locations } from "@/data/locations.ts";
-import useSelectedCityAndGym from "@/pages/SubscriptionFormPage/hooks/useSelectedCityAndGym.ts";
+import useSubscriptionFormData from "@/pages/SubscriptionFormPage/hooks/useSubscriptionFormData.ts";
 
 export default function SubscriptionFormPage() {
-    const { selectedCity, selectedGym, changeCity, changeGym } = useSelectedCityAndGym();
+    const {
+        selectedCity,
+        selectedGym,
+        selectedSubscription,
+        changeCity,
+        changeGym,
+        setSelectedSubscription,
+    } = useSubscriptionFormData();
 
     const [isPrivacyPolicyChecked, setIsPrivacyPolicyChecked] = useState(false);
     const [isSpamChecked, setIsSpamChecked] = useState(false);
@@ -39,7 +46,12 @@ export default function SubscriptionFormPage() {
                             onChange={(e) => changeGym(e.target.value as string)}
                             defaultValue="Выберите зал"
                         />
-
+                        <SelectComponent
+                            currentValue={selectedSubscription}
+                            defaultValue="Выберите абонемент"
+                            values={["Грамотная подписка", "Базовая подписка", "Тест-драйв"]}
+                            onChange={(e) => setSelectedSubscription(e.target.value as string)}
+                        />
                         <input type="text" placeholder="Имя*" className={inputClasses} required />
                         <PhoneNumberInput inputClasses={inputClasses} />
                         <input

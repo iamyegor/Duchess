@@ -2,10 +2,11 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { locations } from "@/data/locations.ts";
 
-export default function useSelectedCityAndGym() {
+export default function useSubscriptionFormData() {
     const [searchParams, _setSearchParams] = useSearchParams();
     const [selectedCity, setSelectedCity] = useState<string>(locations[0].name);
     const [selectedGym, setSelectedGym] = useState<string>("Выберите зал");
+    const [selectedSubscription, setSelectedSubscription] = useState<string>("Выберите абонемент");
 
     useEffect(() => {
         const city = searchParams.get("city");
@@ -20,6 +21,11 @@ export default function useSelectedCityAndGym() {
                 setSelectedGym(gym);
             }
         }
+
+        const subscription = searchParams.get("subscription");
+        if (subscription) {
+            setSelectedSubscription(subscription);
+        }
     }, [searchParams.toString()]);
 
     function changeCity(city: string) {
@@ -27,5 +33,12 @@ export default function useSelectedCityAndGym() {
         setSelectedGym("Выберите зал");
     }
 
-    return { selectedCity, selectedGym, changeCity, changeGym: setSelectedGym };
+    return {
+        selectedCity,
+        selectedGym,
+        selectedSubscription,
+        changeCity,
+        changeGym: setSelectedGym,
+        setSelectedSubscription,
+    };
 }

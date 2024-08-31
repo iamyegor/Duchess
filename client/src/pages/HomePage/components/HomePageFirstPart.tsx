@@ -1,5 +1,4 @@
 import girlImage from "@/assets/homePage/home-page-girl.png";
-import { Link } from "react-router-dom";
 
 export default function HomePageFirstPart({ onButtonClick }: { onButtonClick: () => void }) {
     return (

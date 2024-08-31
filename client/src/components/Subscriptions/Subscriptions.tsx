@@ -28,7 +28,7 @@ export default function Subscriptions() {
             <HomePageSwiper uniqueValue="subscriptions" style={{ paddingTop: "24px" }}>
                 <SwiperSlide>
                     <SubscriptionComponent
-                        subscriptionComponent={{ title: "Тест-драйв", currentPrice: 0 }}
+                        subscription={{ title: "Тест-драйв", currentPrice: 0 }}
                         paymentType={selectedPaymentType}
                         benefits={[
                             "Тренажерный зал",
@@ -46,7 +46,7 @@ export default function Subscriptions() {
                 <SwiperSlide>
                     <SubscriptionComponent
                         isBest
-                        subscriptionComponent={subscriptions.smartSubscription}
+                        subscription={subscriptions.smartSubscription}
                         paymentType={selectedPaymentType}
                         benefits={[
                             "Тренажерный зал",
@@ -63,7 +63,7 @@ export default function Subscriptions() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <SubscriptionComponent
-                        subscriptionComponent={subscriptions.basicSubscription}
+                        subscription={subscriptions.basicSubscription}
                         paymentType={selectedPaymentType}
                         benefits={[
                             "Тренажерный зал",

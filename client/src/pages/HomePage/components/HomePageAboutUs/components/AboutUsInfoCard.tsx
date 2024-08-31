@@ -13,8 +13,8 @@ export default function AboutUsInfoCard({ title, content }: CardProps) {
                 <p className="text-sm xs:text-base sm:text-lg">{content}</p>
             </div>
             <Link
-                to="/programs"
-                className="bg-black w-full text-white py-2 rounded-lg hover:bg-neutral-900 transition duration-300 flex justify-center items-center"
+                to="/beginners"
+                className="bg-black w-full text-white py-3 rounded-lg hover:bg-neutral-900 transition duration-300 flex justify-center items-center"
             >
                 Подробнее
             </Link>
