@@ -10,7 +10,7 @@ export default function AboutUsInfoCard({ title, content }: CardProps) {
         <div className="bg-default text-white p-8 rounded-xl space-y-8 xs:space-y-12 flex flex-col justify-between h-full">
             <div className="space-y-4">
                 <h2 className="text-xl font-bold">{title}</h2>
-                <p className="text-sm xs:text-base sm:text-lg">{content}</p>
+                <p className="text-base sm:text-lg">{content}</p>
             </div>
             <Link
                 to="/beginners"

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function PromotionsPage() {
     return (
-        <div className="flex flex-col bg-default h-full py-8">
+        <div className="flex flex-col bg-default h-full pb-10">
             <DuchessLogo />
             <div className="container h-full space-y-10 flex flex-col">
                 <h1 className="text-5xl font-semibold">АКЦИИ</h1>
@@ -30,7 +30,7 @@ function PromotionsPage() {
                             <span className="text-base">Финальные скидки</span>
                             <Link
                                 to="/gyms"
-                                className="bg-default hover:bg-default-dark text-black font-semibold py-2 px-7 rounded-lg w-full lg:w-auto"
+                                className="bg-default hover:bg-default-dark text-black font-semibold py-3 px-7 rounded-lg w-full lg:w-auto text-center"
                             >
                                 КУПИТЬ АБОНЕМЕНТ
                             </Link>

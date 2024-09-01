@@ -22,7 +22,10 @@ export default function HomePageFirstPart({ onButtonClick }: { onButtonClick: ()
                     </button>
                 </div>
             </div>
-            <div className="h-full hidden md:flex items-end w-[350px] flex-shrink-0">
+            <div
+                className="h-full hidden md:flex items-end flex-shrink-0"
+                style={{ aspectRatio: "9/16" }}
+            >
                 <img className="max-h-full h-full w-full" src={girlImage} alt="Красивая Девушка" />
             </div>
         </div>

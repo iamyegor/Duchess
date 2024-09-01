@@ -25,7 +25,7 @@ export default function BurgerMenu({ onClose }: BurgerMenuProps) {
                     <p className="group-hover:text-neutral-300">Закрыть</p>
                 </button>
             </div>
-            <div className="flex flex-col space-y-5">
+            <div className="flex flex-col space-y-7">
                 {links.map((link) => (
                     <Link
                         key={link.to}

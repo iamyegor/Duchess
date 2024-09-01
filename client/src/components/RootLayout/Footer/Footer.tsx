@@ -36,7 +36,7 @@ export default function Footer() {
             ],
         },
         {
-            name: "Членам клуба",
+            name: "Тренирующемся",
             links: [
                 { name: "Акции", href: "/" },
                 { name: "Duchess TV", href: "/" },
@@ -47,12 +47,12 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="p-8 pt-6 bg-black border-t-2 border-neutral-800">
+        <footer className="pt-10 pb-28 lg:pb-10 bg-black border-t-2 border-neutral-800">
             <div className="container flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between">
                 {sections.map((section, index) => (
                     <>
                         <FooterSectionComponent key={section.name} section={section} />
-                        {index != sections.length - 1 && <hr className="block lg:hidden" />}
+                        {index != sections.length - 1 && <hr className="block border-neutral-600 lg:hidden" />}
                     </>
                 ))}
             </div>

@@ -2,17 +2,6 @@ import DuchessLogo from "@/components/ui/DuchessLogo.tsx";
 import AccordionItem from "@/pages/FaqPage/components/AccordionItem.tsx";
 
 export default function FaqPage() {
-    const faqData = [
-        {
-            question: "What is your return policy?",
-            answer: "Our return policy is 30 days, no questions asked.",
-        },
-        {
-            question: "How do I track my order?",
-            answer: "You can track your order using the tracking link sent to your email.",
-        },
-    ];
-
     return (
         <div className="my-6 container">
             <DuchessLogo />

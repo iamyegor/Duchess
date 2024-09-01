@@ -17,10 +17,10 @@ export default function BenefitsSection() {
                 alt="Gym"
                 className="w-full h-full object-cover absolute inset-0 opacity-60"
             />
-            <div className="relative z-10 w-full h-full p-10">
+            <div className="relative z-10 w-full h-full py-10">
                 <div className="container flex justify-center md:justify-end items-center h-full">
-                    <div className="h-full bg-default p-7 sm:p-10 rounded-xl space-y-6 xs:space-y-10 border border-default-lighter flex flex-col justify-center">
-                        <h1 className="text-3xl xs:text-4.5xl sm:text-5xl font-semibold flex flex-col">
+                    <div className="h-full bg-default p-7 sm:p-10 rounded-xl space-y-10 xs:space-y-10 border border-default-lighter flex flex-col justify-center">
+                        <h1 className="text-4xl xs:text-5xl sm:text-5.5xl font-semibold flex flex-col">
                             <span className="text-black">С DUCHESS FITNESS</span>{" "}
                             <span>вы получите</span>
                         </h1>

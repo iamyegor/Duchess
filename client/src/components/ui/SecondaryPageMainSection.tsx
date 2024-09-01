@@ -13,7 +13,7 @@ export default function SecondaryPageMainSection({ img, title }: SecondaryPageMa
             <div className="absolute inset-0">
                 <img src={img} alt="Основная картинка" className="w-full h-full object-cover" />
             </div>
-            <div className="z-10 container h-full flex items-end xs:items-center p-4">
+            <div className="z-10 container h-full flex items-center p-4">
                 <div className="flex flex-col justify-start lg:max-w-[650px]  space-y-8">
                     <h1 className="text-2xl xs:text-3xl sm:text-5xl font-bold mb-4">{title}</h1>
                     <Link
