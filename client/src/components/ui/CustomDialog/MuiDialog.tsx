@@ -7,6 +7,8 @@ const MuiDialog: any = styled(Dialog)(() => ({
         padding: "20px",
         width: "100%",
         margin: "10px",
+        backgroundColor: "black",
+        color: "white",
     },
 }));
 
