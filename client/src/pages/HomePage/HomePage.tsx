@@ -18,7 +18,7 @@ export default function HomePage() {
             <DuchessLogo />
             <HomePageFirstPart onButtonClick={scrollToMap} />
             <BenefitsSection />
-            <div className="lg: h-auto pb-16 lg:pb-0">
+            <div className="lg:h-auto pb-[100px] md:pb-16">
                 <GymSelectMap ref={mapRef} />
             </div>
             <Subscriptions />
