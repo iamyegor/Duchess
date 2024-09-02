@@ -5,6 +5,8 @@ import SelectComponent from "@/pages/HomePage/components/SelectComponent.tsx";
 import PhoneNumberInput from "@/pages/SubscriptionFormPage/components/PhoneNumberInput.tsx";
 import { locations } from "@/data/locations.ts";
 import useSubscriptionFormData from "@/pages/SubscriptionFormPage/hooks/useSubscriptionFormData.ts";
+import CustomDialog from "@/components/ui/CustomDialog/CustomDialog.tsx";
+import RedFaceSvg from "@/assets/customDialog/red-face.svg?react";
 
 export default function SubscriptionFormPage() {
     const {
@@ -16,6 +18,8 @@ export default function SubscriptionFormPage() {
         setSelectedSubscription,
     } = useSubscriptionFormData();
 
+    const [subscribeFailedDialogOpen, setSubscribeFailedDialogOpen] = useState(false);
+
     const [isPrivacyPolicyChecked, setIsPrivacyPolicyChecked] = useState(false);
     const [isSpamChecked, setIsSpamChecked] = useState(false);
 
@@ -26,6 +30,12 @@ export default function SubscriptionFormPage() {
         return locations.find((x) => x.name === selectedCity)?.markers.map((x) => x.name) ?? [];
     }
 
+    function subscribe(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        setSubscribeFailedDialogOpen(true);
+    }
+
     return (
         <div className="flex flex-col bg-default h-full">
             <DuchessLogo />
@@ -34,7 +44,10 @@ export default function SubscriptionFormPage() {
                     ОФОРМИТЬ АБОНЕМЕНТ
                 </h2>
                 <div className="h-full flex items-center justify-center">
-                    <form className="space-y-7 bg-neutral-800/30 border border-neutral-500/40 max-w-xl p-6 sm:p-10 rounded-xl">
+                    <form
+                        onSubmit={subscribe}
+                        className="space-y-7 bg-neutral-800/30 border border-neutral-500/40 max-w-xl p-6 sm:p-10 rounded-xl"
+                    >
                         <SelectComponent
                             currentValue={selectedCity}
                             values={locations.map((x) => x.name)}
@@ -86,6 +99,19 @@ export default function SubscriptionFormPage() {
                         >
                             Записаться
                         </button>
+
+                        <CustomDialog
+                            isOpen={subscribeFailedDialogOpen}
+                            onClose={() => setSubscribeFailedDialogOpen(false)}
+                        >
+                            <div className="px-6 flex flex-col items-center space-y-4">
+                                <RedFaceSvg className="w-20 h-20" />
+                                <p className="text-xl font-medium text-center">
+                                    Что-то пошло не так при попытке совершить запись в клуб,
+                                    пожалуйста попробуйте позже.
+                                </p>
+                            </div>
+                        </CustomDialog>
                     </form>
                 </div>
             </div>
