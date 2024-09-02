@@ -1,5 +1,6 @@
 import FooterSectionComponent from "@/components/RootLayout/Footer/FooterSectionComponent.tsx";
 import FooterSection from "@/components/RootLayout/Footer/types/FooterSection.tsx";
+import AboutSection from "@/components/RootLayout/Footer/AboutSection.tsx";
 
 export default function Footer() {
     const sections: FooterSection[] = [
@@ -48,13 +49,17 @@ export default function Footer() {
 
     return (
         <footer className="pt-10 pb-28 lg:pb-10 bg-black border-t-2 border-neutral-800">
-            <div className="container flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between">
+            <div className="container grid grid-cols-1 xl:grid-cols-5 px-8 gap-y-10 gap-8">
                 {sections.map((section, index) => (
                     <>
                         <FooterSectionComponent key={section.name} section={section} />
-                        {index != sections.length - 1 && <hr className="block border-neutral-600 lg:hidden" />}
+                        {index != sections.length - 1 && (
+                            <hr className="block border-neutral-600 lg:hidden" />
+                        )}
                     </>
                 ))}
+
+                <AboutSection />
             </div>
         </footer>
     );
