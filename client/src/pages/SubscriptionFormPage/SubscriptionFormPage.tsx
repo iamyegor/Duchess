@@ -39,14 +39,14 @@ export default function SubscriptionFormPage() {
     return (
         <div className="flex flex-col bg-default h-full">
             <DuchessLogo />
-            <div className="container h-full pb-14 pt-8 min-h-[700px]">
-                <h2 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center md:text-left">
+            <div className="container h-full pb-14 pt-4 space-y-4 min-h-[700px]">
+                <h2 className="text-xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center lg:text-left">
                     ОФОРМИТЬ АБОНЕМЕНТ
                 </h2>
                 <div className="h-full flex items-center justify-center">
                     <form
                         onSubmit={subscribe}
-                        className="space-y-7 bg-neutral-800/30 border border-neutral-500/40 max-w-xl p-6 sm:p-10 rounded-xl"
+                        className="space-y-7 bg-neutral-800/30 border border-neutral-500/40 max-w-xl p-4 py-6 xs:p-6 sm:p-10 rounded-xl"
                     >
                         <SelectComponent
                             currentValue={selectedCity}
