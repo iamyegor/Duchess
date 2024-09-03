@@ -7,6 +7,7 @@ import ProgramsPage from "@/pages/ProgramsPage/ProgramsPage.tsx";
 import BeginnersPage from "@/pages/BeginnersPage/BeginnersPage.tsx";
 import FaqPage from "@/pages/FaqPage/FaqPage.tsx";
 import GymsPage from "@/pages/MapPage/GymsPage.tsx";
+import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage.tsx";
 
 export const routes = [
     {
@@ -43,8 +44,12 @@ export const routes = [
             },
             {
                 path: "gyms",
-                element: <GymsPage />
-            }
+                element: <GymsPage />,
+            },
+            {
+                path: "*",
+                element: <NotFoundPage />,
+            },
         ],
     },
 ];
