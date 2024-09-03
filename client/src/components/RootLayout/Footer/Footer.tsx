@@ -1,6 +1,7 @@
 import FooterSectionComponent from "@/components/RootLayout/Footer/FooterSectionComponent.tsx";
 import FooterSection from "@/components/RootLayout/Footer/types/FooterSection.tsx";
 import AboutSection from "@/components/RootLayout/Footer/AboutSection.tsx";
+import gDigitalLogo from "@/assets/g-digital/g-digital-logo.png";
 
 export default function Footer() {
     const sections: FooterSection[] = [
@@ -49,17 +50,24 @@ export default function Footer() {
 
     return (
         <footer className="pt-10 pb-28 lg:pb-10 bg-black border-t-2 border-neutral-800">
-            <div className="container grid grid-cols-1 xl:grid-cols-5 px-8 gap-y-10 gap-8">
-                {sections.map((section, index) => (
-                    <>
-                        <FooterSectionComponent key={section.name} section={section} />
-                        {index != sections.length - 1 && (
-                            <hr className="block border-neutral-600 lg:hidden" />
-                        )}
-                    </>
-                ))}
-
-                <AboutSection />
+            <div className="container flex flex-col items-center gap-y-8 lg:gap-y-0">
+                <div className="flex w-full flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between">
+                    {sections.map((section, index) => (
+                        <>
+                            <FooterSectionComponent key={section.name} section={section} />
+                            {index != sections.length - 1 && (
+                                <hr className="block border-neutral-600 lg:hidden" />
+                            )}
+                        </>
+                    ))}
+                </div>
+                <a
+                    className="font-bold flex items-center space-x-2"
+                    href="https://kwork.ru/user/gdigital_development"
+                >
+                    <img className="w-14 h-14" src={gDigitalLogo} alt="G Digital логотип" />
+                    <p className="hover:underline">Разработано командой GDigital</p>
+                </a>
             </div>
         </footer>
     );

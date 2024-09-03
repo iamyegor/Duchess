@@ -15,13 +15,7 @@ export default function AboutSection() {
                 <p className="font-semibold italic whitespace-nowrap">8 800 777-4-999</p>
                 <p className="text-neutral-400 whitespace-nowrap">7:00 – 22:00 МСК</p>
             </div>
-            <a
-                className="font-bold flex items-center space-x-2"
-                href="https://kwork.ru/user/gdigital_development"
-            >
-                <img className="w-14 h-14" src={gDigitalLogo} alt="G Digital логотип" />
-                <p className="hover:underline">Разработано командой GDigital</p>
-            </a>
+            
         </div>
     );
 }
