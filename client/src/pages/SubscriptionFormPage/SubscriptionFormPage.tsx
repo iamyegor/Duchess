@@ -6,7 +6,7 @@ import PhoneNumberInput from "@/pages/SubscriptionFormPage/components/PhoneNumbe
 import { locations } from "@/data/locations.ts";
 import useSubscriptionFormData from "@/pages/SubscriptionFormPage/hooks/useSubscriptionFormData.ts";
 import CustomDialog from "@/components/ui/CustomDialog/CustomDialog.tsx";
-import RedFaceSvg from "@/assets/customDialog/red-face.svg?react";
+import { TbHandStop } from "react-icons/tb";
 
 export default function SubscriptionFormPage() {
     const {
@@ -105,10 +105,9 @@ export default function SubscriptionFormPage() {
                             onClose={() => setSubscribeFailedDialogOpen(false)}
                         >
                             <div className="px-6 flex flex-col items-center space-y-4">
-                                <RedFaceSvg className="w-20 h-20" />
+                                <TbHandStop className="w-20 h-20 text-default" />
                                 <p className="text-xl font-medium text-center">
-                                    Что-то пошло не так при попытке совершить запись в клуб,
-                                    пожалуйста попробуйте позже.
+                                    Оформление заказа временно недоступно!
                                 </p>
                             </div>
                         </CustomDialog>
