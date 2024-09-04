@@ -14,5 +14,12 @@ body {
     font-family: "Inter", sans-serif;
     color: white;
     box-sizing: border-box;
-    @apply bg-default
+    @apply bg-default;
+}
+
+@font-face {
+    font-family: "Sofa";
+    src: url("/src/assets/fonts/sofa.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
 }

@@ -32,7 +32,7 @@ export default function Subscriptions() {
                         paymentType={selectedPaymentType}
                         benefits={[
                             "Тренажерный зал",
-                            "Фнализ состава тела InBody",
+                            "Анализ состава тела InBody",
                             "Бесплатные тренировки с тренером",
                             "Мобильное приложение",
                             "Групповые занятия",
@@ -50,7 +50,7 @@ export default function Subscriptions() {
                         paymentType={selectedPaymentType}
                         benefits={[
                             "Тренажерный зал",
-                            "Фнализ состава тела InBody",
+                            "Анализ состава тела InBody",
                             "Бесплатные тренировки с тренером",
                             "Мобильное приложение",
                             "Групповые занятия",
@@ -67,7 +67,7 @@ export default function Subscriptions() {
                         paymentType={selectedPaymentType}
                         benefits={[
                             "Тренажерный зал",
-                            "Фнализ состава тела InBody",
+                            "Анализ состава тела InBody",
                             "Бесплатные тренировки с тренером",
                             "Мобильное приложение",
                             "Групповые занятия",
