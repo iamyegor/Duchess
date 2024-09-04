@@ -107,7 +107,7 @@ export default function SubscriptionFormPage() {
                             <div className="px-6 flex flex-col items-center space-y-4">
                                 <TbHandStop className="w-20 h-20 text-default" />
                                 <p className="text-xl font-medium text-center">
-                                    Оформление заказа временно недоступно!
+                                    Оформление абонемента временно недоступно!
                                 </p>
                             </div>
                         </CustomDialog>
