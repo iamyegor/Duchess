@@ -1,10 +1,9 @@
 import classNames from "classnames";
-import PaymentType from "@/pages/HomePage/types/PaymentType.ts";
 
 interface PaymentTypeSwitcherProps {
-    selectedType: PaymentType;
-    setSelectedPaymentType: (paymentType: PaymentType) => void;
-    paymentType: PaymentType;
+    selectedType: string;
+    setSelectedPaymentType: (paymentType: string) => void;
+    paymentType: string;
 }
 
 export default function PaymentTypeSwitcher({
@@ -21,7 +20,7 @@ export default function PaymentTypeSwitcher({
             })}
             onClick={() => setSelectedPaymentType(paymentType)}
         >
-            Оплата {paymentType}
+            {paymentType}
         </button>
     );
 }

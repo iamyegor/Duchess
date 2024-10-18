@@ -1,14 +1,31 @@
 import DuchessLogo from "@/components/ui/DuchessLogo";
-import promotionImage from "@/assets/promotionsPage/promotion.png";
+import promotionRuImage from "./assets/promotion-ru.png";
+import promotionEnImage from "./assets/promotion-en.png";
 import { Link } from "react-router-dom";
+import usePromotionsPageTranslation from "./hooks/usePromotionsPageTranslation";
+import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 function PromotionsPage() {
+    const { uiLanguage } = useLanguage();
+    const [promotionImage, setPromotionImage] = useState(promotionRuImage);
+
+    useEffect(() => {
+        if (uiLanguage === "ru") {
+            setPromotionImage(promotionRuImage);
+        } else {
+            setPromotionImage(promotionEnImage);
+        }
+    }, [uiLanguage]);
+
+    const t = usePromotionsPageTranslation();
+
     return (
-        <div className="flex flex-col bg-default h-full pb-10">
-            <DuchessLogo />
+        <div className="flex flex-col pt-4 lg:pt-24 bg-black h-full pb-10">
+            <DuchessLogo theme="light"/>
             <div className="container h-full space-y-10 flex flex-col">
-                <h1 className="text-5xl font-semibold">АКЦИИ</h1>
-                <div className="bg-black text-white rounded-xl flex h-auto md:h-[350px] lg:h-[500px] flex-col md:flex-row">
+                <h1 className="text-[42px] xs:text-[50px] font-semibold">{t.promotions}</h1>
+                <div className="bg-neutral-950 border border-neutral-700 text-white rounded-xl flex h-auto md:h-[350px] lg:h-[500px] flex-col md:flex-row">
                     <div className="flex-none " style={{ aspectRatio: "1 / 1" }}>
                         <img
                             src={promotionImage}
@@ -18,21 +35,16 @@ function PromotionsPage() {
                     </div>
                     <div className="flex flex-1 flex-col justify-between p-6 lg:p-8 space-y-4">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold mb-4">
-                                0₽ на вступительный взнос
-                            </h1>
-                            <p className="text-xl lg:text-2xl mb-6">
-                                Скидка 100% на вступительный взнос при покупке абонемента во всех
-                                клубах сети Duchess Fitness.
-                            </p>
+                            <h1 className="text-3xl lg:text-5xl font-bold mb-4">{t.noEntryFee}</h1>
+                            <p className="text-[20px] mb-6">{t.discountDescription}</p>
                         </div>
                         <div className="flex flex-col space-y-4 lg:space-y-0 lg:flex-row justify-between items-center">
-                            <span className="text-base">Финальные скидки</span>
+                            <span className="text-base">{t.finalDiscounts}</span>
                             <Link
                                 to="/gyms"
-                                className="bg-default hover:bg-default-dark text-black font-semibold py-3 px-7 rounded-lg w-full lg:w-auto text-center"
+                                className="bg-default hover:default-dark font-semibold py-3 px-8 rounded-lg w-full lg:w-auto text-center"
                             >
-                                КУПИТЬ АБОНЕМЕНТ
+                                {t.buyMembership}
                             </Link>
                         </div>
                     </div>

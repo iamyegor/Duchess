@@ -18,14 +18,14 @@ export default function SecondaryPageSection({
 }: ProgramsPageSectionProps) {
     return (
         <div
-            className={classNames("py-16", {
+            className={classNames("py-24", {
                 "bg-default": bgColor === "orange",
                 "bg-black": bgColor === "black",
             })}
         >
             <div
                 className={classNames(
-                    "flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-x-8 container lg:items-center",
+                    "flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-x-14 container lg:items-center",
                     {
                         "lg:flex-row-reverse": imageAlignment === "left",
                     },
@@ -33,7 +33,7 @@ export default function SecondaryPageSection({
             >
                 <div className="flex-1 text-white space-y-8">
                     <h2 className="text-3xl sm:text-5xl font-semibold">{title}</h2>
-                    <p className="text-xl font-medium">{content}</p>
+                    <p className="text-[16px] font-medium">{content}</p>
                 </div>
                 <div className="flex-1 h-min" style={{ aspectRatio: "16/10" }}>
                     <img

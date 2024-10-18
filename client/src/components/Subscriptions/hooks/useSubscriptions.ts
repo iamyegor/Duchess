@@ -1,43 +1,45 @@
-import { useEffect, useState } from "react";
-import PaymentType from "@/pages/HomePage/types/PaymentType.ts";
 import Subscriptions from "@/components/Subscriptions/types/Subscriptions.ts";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
 
-const monthlySubscriptions = {
-    basicSubscription: {
-        title: "Базовая подписка",
-        currentPrice: 1990,
+const translations = {
+    en: {
+        basicSubscription: "Basic Subscription",
+        smartSubscription: "Smart Subscription",
+        monthlyPayment: "Monthly Payment",
     },
-    smartSubscription: {
-        title: "Грамотная подписка",
-        currentPrice: 2490,
+    ru: {
+        basicSubscription: "Базовая подписка",
+        smartSubscription: "Грамотная подписка",
+        monthlyPayment: "Ежемесячная Оплата",
     },
 };
 
-export default function useSubscriptions({
-    selectedPaymentType,
-}: {
-    selectedPaymentType: PaymentType;
-}) {
-    const [subscriptions, setSubscriptions] = useState<Subscriptions>(monthlySubscriptions);
+const getSubscriptions = (isMonthly: boolean, locale: "en" | "ru") => ({
+    basicSubscription: {
+        title: translations[locale].basicSubscription,
+        currentPrice: isMonthly ? 1990 : 19900,
+        ...(isMonthly ? {} : { priceWithoutDiscount: 23880 }),
+    },
+    smartSubscription: {
+        title: translations[locale].smartSubscription,
+        currentPrice: isMonthly ? 2490 : 22990,
+        ...(isMonthly ? {} : { priceWithoutDiscount: 29880 }),
+    },
+});
+
+export default function useSubscriptions({ selectedPaymentType }: { selectedPaymentType: string }) {
+    const { uiLanguage } = useLanguage();
+    const [subscriptions, setSubscriptions] = useState<Subscriptions>(getSubscriptions(true, "ru"));
+    const [locale, setLocale] = useState<"en" | "ru">("ru");
 
     useEffect(() => {
-        if (selectedPaymentType === "ежемесячно") {
-            setSubscriptions(monthlySubscriptions);
-        } else {
-            setSubscriptions({
-                basicSubscription: {
-                    title: "Базовая подписка",
-                    currentPrice: 19900,
-                    priceWithoutDiscount: 23880,
-                },
-                smartSubscription: {
-                    title: "Грамотная подписка",
-                    currentPrice: 22990,
-                    priceWithoutDiscount: 29880,
-                },
-            });
-        }
-    }, [selectedPaymentType]);
+        const currentLocale = uiLanguage === "en" ? "en" : "ru";
+        setLocale(currentLocale);
 
-    return { subscriptions };
+        const isMonthly = selectedPaymentType === translations[currentLocale].monthlyPayment;
+        setSubscriptions(getSubscriptions(isMonthly, currentLocale));
+    }, [selectedPaymentType, uiLanguage]);
+
+    return { subscriptions, locale };
 }

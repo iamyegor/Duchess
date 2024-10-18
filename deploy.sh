@@ -2,7 +2,7 @@
 DOCKER_USERNAME="jasonstathamdev"
 DOCKER_REPO="duchess"
 APP_IMAGE="client"
-SERVER_IP="84.201.150.249"
+SERVER_IP="REDACTED"
 HELM_COMMAND="helm upgrade duchess duchess-k8s --values duchess-k8s/values.yaml"
 
 build_and_push() {

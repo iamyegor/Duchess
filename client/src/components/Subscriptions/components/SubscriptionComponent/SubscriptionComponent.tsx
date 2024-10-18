@@ -1,14 +1,15 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import Subscription from "@/components/Subscriptions/types/Subscription.ts";
-import PaymentType from "@/pages/HomePage/types/PaymentType.ts";
 import CheckSvg from "@/assets/common/check.svg?react";
 import TrophySvg from "@/assets/homePage/trophy.svg?react";
 import SmallCrossSvg from "@/assets/common/small-cross-2.svg?react";
-import { Link } from "react-router-dom";
+import useSubscriptionTranslation from "./hooks/useSubscriptionTranslation";
 
 export type SubscriptionComponentType = {
     isBest?: boolean;
     subscription: Subscription;
-    paymentType: PaymentType;
+    paymentType: string;
     benefits: string[];
     className?: string;
     notAllowed?: string[];
@@ -22,14 +23,19 @@ export default function SubscriptionComponent({
     className = "",
     notAllowed,
 }: SubscriptionComponentType) {
+    const t = useSubscriptionTranslation();
+
+    const isMonthlyPayment =
+        paymentType === "Monthly Payment" || paymentType === "Ежемесячная Оплата";
+
     return (
         <div
-            className={`flex-1 rounded-xl bg-black p-8 h-full max-w-full flex flex-col justify-between ${className} relative`}
+            className={`flex-1 rounded-xl bg-neutral-950 border-neutral-700 border p-8 h-full max-w-full flex flex-col justify-between ${className} relative`}
         >
             {isBest && (
                 <div className="bg-default text-sm text-black rounded-lg p-3 py-2 flex items-center space-x-3 absolute -top-5 left-5 sm:left-auto right-5 border-2 border-black">
                     <TrophySvg className="fill-black w-5 h-5 flex-shrink-0" />
-                    <p>Лучшее предложение</p>
+                    <p>{t.bestOffer}</p>
                 </div>
             )}
             <div className="space-y-4 mb-12 mt-2">
@@ -45,7 +51,7 @@ export default function SubscriptionComponent({
                         notAllowed.map((notAllowedItem, index) => (
                             <li
                                 key={index}
-                                className="text-neutral-400 flex items-center space-x-3"
+                                className="text-neutral-500 flex items-center space-x-3"
                             >
                                 <SmallCrossSvg className="fill-neutral-500 w-7 h-7 flex-shrink-0" />
                                 <p>{notAllowedItem}</p>
@@ -58,21 +64,21 @@ export default function SubscriptionComponent({
                     {subscription.priceWithoutDiscount && (
                         <span className="line-through text-neutral-400 text-sm ">
                             {subscription.priceWithoutDiscount}₽{" "}
-                            {paymentType == "ежемесячно" ? "в месяц" : "в год"}
+                            {isMonthlyPayment ? t.perMonth : t.perYear}
                         </span>
                     )}
                     <span>
                         {subscription.currentPrice
-                            ? `${subscription.currentPrice}₽ ${paymentType == "ежемесячно" ? "в месяц" : "в год"}`
-                            : "Бесплатно"}
+                            ? `${subscription.currentPrice}₽ ${isMonthlyPayment ? t.perMonth : t.perYear}`
+                            : t.free}
                     </span>
                 </h3>
                 <div>
                     <Link
                         to={`/gyms?subscription=${subscription.title}&paymentType=${paymentType}`}
-                        className="bg-default hover:bg-default-dark block rounded-lg p-3 transition text-center"
+                        className="bg-default hover:bg-default/90 block rounded-lg p-3 transition text-center"
                     >
-                        Попробовать
+                        {t.tryIt}
                     </Link>
                 </div>
             </div>

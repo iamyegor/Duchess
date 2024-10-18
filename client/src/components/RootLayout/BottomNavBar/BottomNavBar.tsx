@@ -1,12 +1,14 @@
-import LocationSvg from "@/assets/common/location.svg?react";
 import PhoneSvg from "@/assets/bottomNavBar/ringing-phone.svg?react";
 import BurgerMenuSvg from "@/assets/common/burger-menu.svg?react";
-import React, { useState } from "react";
+import LocationSvg from "@/assets/common/location.svg?react";
 import BurgerMenuDrawer from "@/components/RootLayout/BurgerMenuDrawer.tsx";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useBottomNavTranslation from "./hooks/useBottomNavTranslation";
 
 export default function BottomNavBar() {
     const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
+    const t = useBottomNavTranslation();
     const svgClassName = "fill-white group-hover:fill-neutral-300 w-5 xs:w-6 h-5 xs:h-6";
 
     const itemClassName =
@@ -20,15 +22,15 @@ export default function BottomNavBar() {
             />
             <Link to="/gyms" className={itemClassName}>
                 <LocationSvg className={svgClassName} />
-                <p>Выбрать клуб</p>
+                <p>{t.selectGym}</p>
             </Link>
             <a href={`tel:+79999999999`} className={itemClassName}>
                 <PhoneSvg className={svgClassName} />
-                <p>Позвонить</p>
+                <p>{t.call}</p>
             </a>
             <button className={itemClassName} onClick={() => setBurgerMenuOpen(true)}>
                 <BurgerMenuSvg className={svgClassName} />
-                <p>Меню</p>
+                <p>{t.menu}</p>
             </button>
         </nav>
     );

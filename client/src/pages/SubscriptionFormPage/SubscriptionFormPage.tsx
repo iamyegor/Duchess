@@ -1,14 +1,16 @@
-import DuchessLogo from "@/components/ui/DuchessLogo.tsx";
-import Checkbox from "@/components/ui/Checkbox.tsx";
 import React, { useState } from "react";
+import { TbHandStop } from "react-icons/tb";
+import Checkbox from "@/components/ui/Checkbox.tsx";
+import CustomDialog from "@/components/ui/CustomDialog/CustomDialog.tsx";
+import DuchessLogo from "@/components/ui/DuchessLogo.tsx";
+import useLocations from "@/data/locations";
 import SelectComponent from "@/pages/HomePage/components/SelectComponent.tsx";
 import PhoneNumberInput from "@/pages/SubscriptionFormPage/components/PhoneNumberInput.tsx";
-import { locations } from "@/data/locations.ts";
 import useSubscriptionFormData from "@/pages/SubscriptionFormPage/hooks/useSubscriptionFormData.ts";
-import CustomDialog from "@/components/ui/CustomDialog/CustomDialog.tsx";
-import { TbHandStop } from "react-icons/tb";
+import useSubscriptionFormTranslation from "./hooks/useSubscriptionFormTranslation";
 
 export default function SubscriptionFormPage() {
+    const t = useSubscriptionFormTranslation();
     const {
         selectedCity,
         selectedGym,
@@ -16,10 +18,13 @@ export default function SubscriptionFormPage() {
         changeCity,
         changeGym,
         setSelectedSubscription,
-    } = useSubscriptionFormData();
+    } = useSubscriptionFormData({
+        gymPlaceholder: t.gymPlaceholder,
+        subscriptionPlaceholder: t.subscriptionPlaceholder,
+    });
+    const locations = useLocations();
 
     const [subscribeFailedDialogOpen, setSubscribeFailedDialogOpen] = useState(false);
-
     const [isPrivacyPolicyChecked, setIsPrivacyPolicyChecked] = useState(false);
     const [isSpamChecked, setIsSpamChecked] = useState(false);
 
@@ -32,16 +37,15 @@ export default function SubscriptionFormPage() {
 
     function subscribe(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-
         setSubscribeFailedDialogOpen(true);
     }
 
     return (
-        <div className="flex flex-col bg-default h-full">
+        <div className="flex flex-col bg-black h-full">
             <DuchessLogo />
             <div className="container h-full pb-14 pt-4 space-y-4 min-h-[700px]">
                 <h2 className="text-xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center lg:text-left">
-                    ОФОРМИТЬ АБОНЕМЕНТ
+                    {t.title}
                 </h2>
                 <div className="h-full flex items-center justify-center">
                     <form
@@ -52,24 +56,30 @@ export default function SubscriptionFormPage() {
                             currentValue={selectedCity}
                             values={locations.map((x) => x.name)}
                             onChange={(e) => changeCity(e.target.value as string)}
+                            defaultValue={t.cityPlaceholder}
                         />
                         <SelectComponent
                             currentValue={selectedGym}
                             values={getGymsForCity()}
                             onChange={(e) => changeGym(e.target.value as string)}
-                            defaultValue="Выберите зал"
+                            defaultValue={t.gymPlaceholder}
                         />
                         <SelectComponent
                             currentValue={selectedSubscription}
-                            defaultValue="Выберите абонемент"
-                            values={["Грамотная подписка", "Базовая подписка", "Тест-драйв"]}
+                            defaultValue={t.subscriptionPlaceholder}
+                            values={Object.values(t.subscriptions)}
                             onChange={(e) => setSelectedSubscription(e.target.value as string)}
                         />
-                        <input type="text" placeholder="Имя*" className={inputClasses} required />
+                        <input
+                            type="text"
+                            placeholder={t.namePlaceholder}
+                            className={inputClasses}
+                            required
+                        />
                         <PhoneNumberInput inputClasses={inputClasses} />
                         <input
                             type="email"
-                            placeholder="E-mail*"
+                            placeholder={t.emailPlaceholder}
                             className={inputClasses}
                             required
                         />
@@ -80,7 +90,7 @@ export default function SubscriptionFormPage() {
                                 onClick={() => setIsPrivacyPolicyChecked((prev) => !prev)}
                             />
                             <label htmlFor="privacyPolicy" className="text-gray-200">
-                                Согласие с политикой конфиденциальности
+                                {t.privacyPolicy}
                             </label>
                         </div>
                         <div className="flex items-center space-x-3">
@@ -90,14 +100,14 @@ export default function SubscriptionFormPage() {
                                 onClick={() => setIsSpamChecked((prev) => !prev)}
                             />
                             <label htmlFor="spam" className="text-gray-200">
-                                Получать уведомления о новых акциях и скидках
+                                {t.spam}
                             </label>
                         </div>
                         <button
                             type="submit"
                             className="w-full py-3 bg-default text-white font-semibold rounded-lg hover:bg-orange-600 transition duration-300"
                         >
-                            Записаться
+                            {t.submitButton}
                         </button>
 
                         <CustomDialog
@@ -107,7 +117,7 @@ export default function SubscriptionFormPage() {
                             <div className="px-6 flex flex-col items-center space-y-4">
                                 <TbHandStop className="w-20 h-20 text-default" />
                                 <p className="text-xl font-medium text-center">
-                                    Оформление абонемента временно недоступно!
+                                    {t.subscriptionUnavailable}
                                 </p>
                             </div>
                         </CustomDialog>

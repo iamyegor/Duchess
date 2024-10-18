@@ -1,49 +1,50 @@
 import FooterSectionComponent from "@/components/RootLayout/Footer/FooterSectionComponent.tsx";
 import FooterSection from "@/components/RootLayout/Footer/types/FooterSection.tsx";
-import AboutSection from "@/components/RootLayout/Footer/AboutSection.tsx";
-import gDigitalLogo from "@/assets/g-digital/g-digital-logo.png";
+import useFooterTranslation from "./hooks/useFooterTranslation";
 
 export default function Footer() {
+    const t = useFooterTranslation();
+
     const sections: FooterSection[] = [
         {
-            name: "Тренировки",
+            name: t.sectionNames.workouts,
             links: [
-                { name: "Тренеры", href: "/" },
-                { name: "Тренажерный зал", href: "/" },
-                { name: "Групповые тренировки", href: "/" },
-                { name: "Тренировки онлайн", href: "/" },
-                { name: "Групповые тренировки на улице", href: "/" },
-                { name: "Функциональные тренировки", href: "/" },
-                { name: "Силовые тренировки", href: "/" },
-                { name: "Фитнес-тестирование", href: "/" },
-                { name: "Тренировки для студентов", href: "/" },
-                { name: "Расписание", href: "/" },
+                { name: t.subSectionNames.trainers, href: "/" },
+                { name: t.subSectionNames.gym, href: "/" },
+                { name: t.subSectionNames.groupWorkouts, href: "/" },
+                { name: t.subSectionNames.onlineWorkouts, href: "/" },
+                { name: t.subSectionNames.outdoorGroupWorkouts, href: "/" },
+                { name: t.subSectionNames.functionalTraining, href: "/" },
+                { name: t.subSectionNames.strengthTraining, href: "/" },
+                { name: t.subSectionNames.fitnessTesting, href: "/" },
+                { name: t.subSectionNames.studentWorkouts, href: "/" },
+                { name: t.subSectionNames.schedule, href: "/" },
             ],
         },
         {
-            name: "Услуги",
+            name: t.sectionNames.services,
             links: [
-                { name: "Сауны и хаммам", href: "/" },
-                { name: "Недорогие абонементы", href: "/" },
-                { name: "Разовое посещение", href: "/" },
-                { name: "Фитнес для подростков", href: "/" },
+                { name: t.subSectionNames.saunasAndHammam, href: "/" },
+                { name: t.subSectionNames.affordableMemberships, href: "/" },
+                { name: t.subSectionNames.singleVisit, href: "/" },
+                { name: t.subSectionNames.fitnessForTeenagers, href: "/" },
             ],
         },
         {
-            name: "Членам клуба",
+            name: t.sectionNames.clubMembers,
             links: [
-                { name: "Абонементы", href: "/" },
-                { name: "Партнёры и привилегии", href: "/" },
-                { name: "FAQ", href: "/" },
+                { name: t.subSectionNames.memberships, href: "/" },
+                { name: t.subSectionNames.partnersAndPrivileges, href: "/" },
+                { name: t.subSectionNames.faq, href: "/" },
             ],
         },
         {
-            name: "Тренирующемся",
+            name: t.sectionNames.forTrainees,
             links: [
-                { name: "Акции", href: "/" },
-                { name: "Duchess TV", href: "/" },
-                { name: "Мероприятия", href: "/" },
-                { name: "FAQ", href: "/" },
+                { name: t.subSectionNames.promotions, href: "/" },
+                { name: t.subSectionNames.duchessTV, href: "/" },
+                { name: t.subSectionNames.events, href: "/" },
+                { name: t.subSectionNames.faq, href: "/" },
             ],
         },
     ];
@@ -53,22 +54,21 @@ export default function Footer() {
             <div className="container flex flex-col items-center gap-y-8 lg:gap-y-0">
                 <div className="flex w-full flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between">
                     {sections.map((section, index) => (
-                        <>
-                            <FooterSectionComponent key={section.name} section={section} />
-                            {index != sections.length - 1 && (
+                        <div key={index}>
+                            <FooterSectionComponent section={section} />
+                            {index !== sections.length - 1 && (
                                 <hr className="block border-neutral-600 lg:hidden" />
                             )}
-                        </>
+                        </div>
                     ))}
                 </div>
                 <p>
-                    <span>Разработано</span>{" "}
+                    <span>{t.developedBy}</span>{" "}
                     <a
                         className="font-sofa text-neutral-400 hover:text-neutral-100 transition"
-                        href="https://kwork.ru/user/gdigital_development"
+                        href={t.developer.link}
                     >
-                        <span>GD</span>
-                        <span className="text-xs">igital</span>
+                        {t.developer.name}
                     </a>
                 </p>
             </div>

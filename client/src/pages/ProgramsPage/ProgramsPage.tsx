@@ -1,35 +1,39 @@
-import SecondaryPageSection from "@/components/ui/SecondaryPageSection.tsx";
 import gymImage from "@/assets/programsPage/gym.webp";
-import trainerImage from "@/assets/programsPage/trainer.jpg";
-import spaImage from "@/assets/programsPage/spa.jpg";
-import SecondaryPageMainSection from "@/components/ui/SecondaryPageMainSection.tsx";
 import programsImage from "@/assets/programsPage/programs.png";
+import spaImage from "@/assets/programsPage/spa.jpg";
+import trainerImage from "@/assets/programsPage/trainer.jpg";
+import SecondaryPageMainSection from "@/components/SecondaryPageMainSection/SecondaryPageMainSection";
+import SecondaryPageSection from "@/components/ui/SecondaryPageSection.tsx";
+import useProgramsTranslation from "./hooks/useProgramsTranslation";
 
 export default function ProgramsPage() {
+    const t = useProgramsTranslation();
+
     return (
         <div className="bg-default">
             <SecondaryPageMainSection
                 img={programsImage}
-                title="Жизнь в ритме DUCHESS FITNESS"
+                title={t.title}
+                description={t.description}
             />
             <SecondaryPageSection
                 image={gymImage}
-                title="Тренажерный зал DUCHESS FITNESS"
-                content="Тренажерный зал DUCHESS FITNESS - уникальное пространство, которое сочетает все необходимое для достижения ваших целей! Каждый зал DUCHESS оснащен современным, высокопроизводительным кардиооборудованием и непревзойденными тренажерами для силового и функционального тренинга от американского бренда Matrix."
+                title={t.gymTitle}
+                content={t.gymContent}
                 bgColor="orange"
                 imageAlignment="right"
             />
             <SecondaryPageSection
                 image={trainerImage}
-                title="Персональные тренировки"
-                content="Персональные тренировки - это быстрый путь к поставленной цели! Работа с тренером формирует не только личный план тренировок, но и обеспечивает вам индивидуальный подход и безопасность на физическом и эмоциональном уровне."
+                title={t.trainerTitle}
+                content={t.trainerContent}
                 bgColor="black"
                 imageAlignment="left"
             />
             <SecondaryPageSection
                 image={spaImage}
-                title="DUCHESS FITNESS SPA"
-                content="Насладитесь полной релаксацией в нашем DUCHESS SPA комплексе. Разгрузите себя от стрессов повседневной жизни и расслабьтесь после интенсивной тренировки."
+                title={t.spaTitle}
+                content={t.spaContent}
                 bgColor="orange"
                 imageAlignment="right"
             />

@@ -6,13 +6,18 @@ import SubscriptionFormPage from "@/pages/SubscriptionFormPage/SubscriptionFormP
 import ProgramsPage from "@/pages/ProgramsPage/ProgramsPage.tsx";
 import BeginnersPage from "@/pages/BeginnersPage/BeginnersPage.tsx";
 import FaqPage from "@/pages/FaqPage/FaqPage.tsx";
-import GymsPage from "@/pages/MapPage/GymsPage.tsx";
+import GymsPage from "@/pages/GymsPage/GymsPage";
 import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage.tsx";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const routes = [
     {
         path: "/",
-        element: <RootLayout />,
+        element: (
+            <LanguageProvider>
+                <RootLayout />
+            </LanguageProvider>
+        ),
         children: [
             {
                 index: true,

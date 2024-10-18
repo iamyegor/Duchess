@@ -1,10 +1,9 @@
-import HomePageFirstPart from "@/pages/HomePage/components/HomePageFirstPart.tsx";
-import BenefitsSection from "@/pages/HomePage/components/BenefitsSection.tsx";
 import Subscriptions from "@/components/Subscriptions/Subscriptions.tsx";
-import DuchessLogo from "@/components/ui/DuchessLogo.tsx";
-import HomePageAboutUs from "@/pages/HomePage/components/HomePageAboutUs/HomePageAboutUs.tsx";
-import { useRef } from "react";
 import GymSelectMap from "@/components/ui/GymSelectMap/GymSelectMap.tsx";
+import BenefitsSection from "@/pages/HomePage/components/BenefitsSection/BenefitsSection";
+import HomePageAboutUs from "@/pages/HomePage/components/HomePageAboutUs/HomePageAboutUs.tsx";
+import HomePageFirstPart from "@/pages/HomePage/components/HomePageFirstPart/HomePageFirstPart";
+import { useRef } from "react";
 
 export default function HomePage() {
     const mapRef = useRef<HTMLDivElement>(null);
@@ -14,8 +13,7 @@ export default function HomePage() {
     }
 
     return (
-        <div className="flex flex-col bg-default h-full">
-            <DuchessLogo />
+        <div className="flex flex-col bg-black h-full">
             <HomePageFirstPart onButtonClick={scrollToMap} />
             <BenefitsSection />
             <div className="lg:h-auto pb-[100px] md:pb-16">
@@ -23,11 +21,6 @@ export default function HomePage() {
             </div>
             <Subscriptions />
             <HomePageAboutUs />
-            <div className="bg-black pb-6">
-                <div className="container">
-                    <p>* по версии журнала Криптан Daily</p>
-                </div>
-            </div>
         </div>
     );
 }

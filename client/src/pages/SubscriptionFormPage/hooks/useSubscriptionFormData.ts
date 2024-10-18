@@ -1,12 +1,24 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+import useLocations from "@/data/locations";
+import { useEffect, useState, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { locations } from "@/data/locations.ts";
+import { Language } from "@/components/RootLayout/hooks/useLanguageDetection";
 
-export default function useSubscriptionFormData() {
+export default function useSubscriptionFormData({
+    gymPlaceholder,
+    subscriptionPlaceholder,
+}: {
+    gymPlaceholder: string;
+    subscriptionPlaceholder: string;
+}) {
+    const locations = useLocations();
     const [searchParams, _setSearchParams] = useSearchParams();
     const [selectedCity, setSelectedCity] = useState<string>(locations[0].name);
-    const [selectedGym, setSelectedGym] = useState<string>("Выберите зал");
-    const [selectedSubscription, setSelectedSubscription] = useState<string>("Выберите абонемент");
+    const [selectedGym, setSelectedGym] = useState<string>(gymPlaceholder);
+    const [selectedSubscription, setSelectedSubscription] =
+        useState<string>(subscriptionPlaceholder);
+    const { uiLanguage } = useLanguage();
+    const prevUiLanguage = useRef<Language>(uiLanguage);
 
     useEffect(() => {
         const city = searchParams.get("city");
@@ -28,9 +40,17 @@ export default function useSubscriptionFormData() {
         }
     }, [searchParams.toString()]);
 
+    useEffect(() => {
+        if (prevUiLanguage.current !== uiLanguage) {
+            setSelectedGym(gymPlaceholder);
+            setSelectedSubscription(subscriptionPlaceholder);
+        }
+        prevUiLanguage.current = uiLanguage;
+    }, [uiLanguage, gymPlaceholder, subscriptionPlaceholder]);
+
     function changeCity(city: string) {
         setSelectedCity(city);
-        setSelectedGym("Выберите зал");
+        setSelectedGym(gymPlaceholder);
     }
 
     return {
