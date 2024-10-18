@@ -23,11 +23,14 @@ const Accordion = styled(MuiAccordion)({
 
 export default function AccordionItem({ question, children }: AccordionItemProps) {
     return (
-        <Accordion square={true}>
-            <AccordionSummary expandIcon={<PlusSvg className="fill-default-lighter w-10 h-10" />}>
-                <p className="text-default-lighter text-lg xs:text-xl font-medium">{question}</p>
+        <Accordion square={true} className="bg-neutral-950">
+            <AccordionSummary
+                expandIcon={<PlusSvg className="fill-default w-10 h-10 bg-neutral-950" />}
+                style={{backgroundColor: "#0a0a0a", padding: "15px 30px 15px 30px"}}
+            >
+                <p className="text-default text-lg font-medium">{question}</p>
             </AccordionSummary>
-            <AccordionDetails>{children}</AccordionDetails>
+            <AccordionDetails className="max-w-[550px] mt-[20px]">{children}</AccordionDetails>
         </Accordion>
     );
 }
