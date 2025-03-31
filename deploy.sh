@@ -29,7 +29,7 @@ build_and_push "${APP_IMAGE}" "client"
 echo -e "\e[32mDocker images built and pushed successfully.\e[0m"
 
 echo -e "\e[32mConnecting to the server to run helm upgrade...\e[0m"
-ssh yegor@"${SERVER_IP}" "${HELM_COMMAND}"
+ssh root@"${SERVER_IP}" "${HELM_COMMAND}"
 
 if [ $? -eq 0 ]; then
     echo -e "\e[32mHelm upgrade completed successfully.\e[0m"
