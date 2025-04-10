@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import logoImage from "@/assets/logo/logo.png";
-import logoLightImage from "@/assets/logo/logo-inverted.png";
+import logoLightImage from "@/assets/logo/logo-inverted.webp";
+import logoImage from "@/assets/logo/logo.webp";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 export default function DuchessLogo({ theme = "dark" }: { theme?: "light" | "dark" }) {
     return (

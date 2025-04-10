@@ -1,6 +1,6 @@
-import girlImage from "@/assets/homePage/home-page-girl.png";
+import girlImage from "@/assets/homePage/home-page-girl.webp";
 import DuchessLogo from "@/components/ui/DuchessLogo";
-import gymBgImg from "./assets/gym-bg.png";
+import gymBgImg from "@/pages/HomePage/components/HomePageFirstPart/assets/gym-bg.webp";
 import useHomePageTranslation from "./hooks/useHomePageTranslation";
 
 export default function HomePageFirstPart({ onButtonClick }: { onButtonClick: () => void }) {
@@ -34,11 +34,7 @@ export default function HomePageFirstPart({ onButtonClick }: { onButtonClick: ()
                         className="h-full min-h-[500px] flex-1 hidden lg:flex items-end justify-end flex-shrink-0"
                         style={{ aspectRatio: "9/16" }}
                     >
-                        <img
-                            className="h-full"
-                            src={girlImage}
-                            alt={t.placeholders.girlImageAlt}
-                        />
+                        <img className="h-full" src={girlImage} alt={t.placeholders.girlImageAlt} />
                     </div>
                 </div>
             </div>

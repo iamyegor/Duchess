@@ -1,5 +1,3 @@
-import gDigitalLogo from "@/assets/g-digital/g-digital-logo.png";
-
 export default function AboutSection() {
     return (
         <div className="space-y-7">
@@ -15,7 +13,6 @@ export default function AboutSection() {
                 <p className="font-semibold italic whitespace-nowrap">8 800 777-4-999</p>
                 <p className="text-neutral-400 whitespace-nowrap">7:00 – 22:00 МСК</p>
             </div>
-            
         </div>
     );
 }

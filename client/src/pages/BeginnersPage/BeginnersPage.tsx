@@ -1,6 +1,6 @@
 import gymImage from "@/assets/beginnersPage/gym.webp";
 import newbiesImage from "@/assets/beginnersPage/newbies.webp";
-import newbies2Image from "@/assets/beginnersPage/newbies2.jpg";
+import newbies2Image from "@/assets/beginnersPage/newbies2.webp";
 import SecondaryPageMainSection from "@/components/SecondaryPageMainSection/SecondaryPageMainSection";
 import SecondaryPageSection from "@/components/ui/SecondaryPageSection.tsx";
 import BenefitsSection from "@/pages/HomePage/components/BenefitsSection/BenefitsSection";

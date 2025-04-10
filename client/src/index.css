@@ -14,7 +14,7 @@ body {
     font-family: "Inter", sans-serif;
     color: white;
     box-sizing: border-box;
-    @apply bg-default;
+    @apply bg-black;
 }
 
 @font-face {

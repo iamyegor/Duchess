@@ -5,7 +5,7 @@ const translations = [
         locale: "en",
         chooseClub: "Choose a Club",
         subscriptions: "Subscriptions",
-        programsAndDirections: "Programs and Directions",
+        programsAndDirections: "Programs",
         forNewClients: "For New Clients",
         promotions: "Promotions",
         faq: "FAQ",

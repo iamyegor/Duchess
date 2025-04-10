@@ -1,6 +1,6 @@
-import gymImage from "@/assets/homePage/gym.jpg";
 import DumbbellSvg from "@/assets/homePage/dumbbell.svg?react";
 import GradCapSvg from "@/assets/homePage/grad-cap.svg?react";
+import gymImage from "@/assets/homePage/gym.webp";
 import LiftingDumbbellSvg from "@/assets/homePage/lifting-dumbbell.svg?react";
 import PearSvg from "@/assets/homePage/pear.svg?react";
 import PersonSvg from "@/assets/homePage/person.svg?react";

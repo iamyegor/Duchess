@@ -31,11 +31,6 @@ const translations = [
             duchessTV: "Duchess TV",
             events: "Events",
         },
-        developedBy: "Developed by",
-        developer: {
-            name: "DENIS",
-            link: "https://www.upwork.com/freelancers/~01069602500635941a?mp_source=share",
-        },
     },
     {
         locale: "ru",
@@ -66,11 +61,6 @@ const translations = [
             promotions: "Акции",
             duchessTV: "Duchess TV",
             events: "Мероприятия",
-        },
-        developedBy: "Разработано",
-        developer: {
-            name: "GDIGITAL",
-            link: "https://kwork.ru/user/gd1g1tal",
         },
     },
 ];

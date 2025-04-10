@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import HeaderLink from "@/components/RootLayout/Header/HeaderLink.tsx";
 import BurgerMenuSvg from "@/assets/common/burger-menu.svg?react";
+import logoImage from "@/assets/logo/logo-inverted.webp";
 import BurgerMenuDrawer from "@/components/RootLayout/BurgerMenuDrawer.tsx";
-import logoImage from "@/assets/logo/logo-inverted.png";
 import ContactPhoneNumber from "@/components/RootLayout/Header/ContactPhoneNumber.tsx";
+import HeaderLink from "@/components/RootLayout/Header/HeaderLink.tsx";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import useHeaderTranslation from "./hooks/useHeaderTranslation";
 
 export default function Header() {

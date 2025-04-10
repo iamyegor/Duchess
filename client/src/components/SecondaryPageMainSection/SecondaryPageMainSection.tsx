@@ -29,7 +29,10 @@ export default function SecondaryPageMainSection({
                     <p className="mb-12">{description}</p>
                     <Link
                         to="/gyms"
-                        className="px-6 py-4 w-full sm:w-[320px] border border-neutral-500 rounded-xl bg-black text-white hover:bg-black/90 hover:shadow-2xl transition text-center"
+                        className="px-6 py-4 w-full sm:w-[320px] border-2
+                         rounded-xl 
+                        bg-default  border-neutral-700 text-white 
+                        hover:shadow-2xl transition text-center"
                     >
                         {t.buyMembership}
                     </Link>

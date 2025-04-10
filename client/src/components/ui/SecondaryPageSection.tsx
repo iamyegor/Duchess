@@ -17,12 +17,7 @@ export default function SecondaryPageSection({
     imageAlignment,
 }: ProgramsPageSectionProps) {
     return (
-        <div
-            className={classNames("py-24", {
-                "bg-default": bgColor === "orange",
-                "bg-black": bgColor === "black",
-            })}
-        >
+        <div className="py-24">
             <div
                 className={classNames(
                     "flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-x-14 container lg:items-center",

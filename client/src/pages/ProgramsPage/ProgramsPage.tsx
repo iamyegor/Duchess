@@ -1,7 +1,7 @@
 import gymImage from "@/assets/programsPage/gym.webp";
-import programsImage from "@/assets/programsPage/programs.png";
-import spaImage from "@/assets/programsPage/spa.jpg";
-import trainerImage from "@/assets/programsPage/trainer.jpg";
+import programsImage from "@/assets/programsPage/programs.webp";
+import spaImage from "@/assets/programsPage/spa.webp";
+import trainerImage from "@/assets/programsPage/trainer.webp";
 import SecondaryPageMainSection from "@/components/SecondaryPageMainSection/SecondaryPageMainSection";
 import SecondaryPageSection from "@/components/ui/SecondaryPageSection.tsx";
 import useProgramsTranslation from "./hooks/useProgramsTranslation";
@@ -10,7 +10,7 @@ export default function ProgramsPage() {
     const t = useProgramsTranslation();
 
     return (
-        <div className="bg-default">
+        <div className="">
             <SecondaryPageMainSection
                 img={programsImage}
                 title={t.title}

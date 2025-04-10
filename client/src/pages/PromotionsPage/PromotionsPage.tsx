@@ -1,10 +1,10 @@
 import DuchessLogo from "@/components/ui/DuchessLogo";
-import promotionRuImage from "./assets/promotion-ru.png";
-import promotionEnImage from "./assets/promotion-en.png";
-import { Link } from "react-router-dom";
-import usePromotionsPageTranslation from "./hooks/usePromotionsPageTranslation";
-import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import promotionEnImage from "@/pages/PromotionsPage/assets/promotion-en.webp";
+import promotionRuImage from "@/pages/PromotionsPage/assets/promotion-ru.webp";
+import usePromotionsPageTranslation from "./hooks/usePromotionsPageTranslation";
 
 function PromotionsPage() {
     const { uiLanguage } = useLanguage();
@@ -22,7 +22,7 @@ function PromotionsPage() {
 
     return (
         <div className="flex flex-col pt-4 lg:pt-24 bg-black h-full pb-10">
-            <DuchessLogo theme="light"/>
+            <DuchessLogo theme="light" />
             <div className="container h-full space-y-10 flex flex-col">
                 <h1 className="text-[42px] xs:text-[50px] font-semibold">{t.promotions}</h1>
                 <div className="bg-neutral-950 border border-neutral-700 text-white rounded-xl flex h-auto md:h-[350px] lg:h-[500px] flex-col md:flex-row">

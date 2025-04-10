@@ -62,15 +62,6 @@ export default function Footer() {
                         </div>
                     ))}
                 </div>
-                <p>
-                    <span>{t.developedBy}</span>{" "}
-                    <a
-                        className="font-sofa text-neutral-400 hover:text-neutral-100 transition"
-                        href={t.developer.link}
-                    >
-                        {t.developer.name}
-                    </a>
-                </p>
             </div>
         </footer>
     );
