@@ -35,24 +35,24 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
             setClubs(clubs);
             setSelectedClub(null);
         }
-    }, [selectedCityName]);
+    }, [locations, selectedCityName, selectedClub?.name]);
 
     const city: City = useMemo(
         () => locations.find((x) => x.name === selectedCityName)!,
-        [selectedCityName],
+        [locations, selectedCityName],
     );
 
     useEffect(() => {
         if (selectedClub) {
-            setMarkers(
-                markers.map((x) =>
+            setMarkers((currentMarkers) =>
+                currentMarkers.map((x) =>
                     x.name !== selectedClub.name
                         ? { ...x, isSelected: false }
                         : { ...x, isSelected: true },
                 ),
             );
         }
-    }, [selectedClub]);
+    }, [selectedClub, setMarkers]);
 
     function getSubscriptionSearchParams() {
         return searchParams.toString() ? `&${searchParams.toString()}` : "";
@@ -60,10 +60,10 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
 
     return (
         <div
-            className="relative block justify-center items-center md:justify-start lg:p-10 lg:flex lg:h-full max-h-[1000px]"
+            className="relative block max-h-[1000px] items-center justify-center overflow-hidden bg-[#050505] md:justify-start lg:flex lg:h-full lg:p-10"
             ref={ref}
         >
-            <div className="relative lg:inset-0 lg:absolute h-[340px] lg:h-full">
+            <div className="relative h-[360px] lg:absolute lg:inset-0 lg:h-full">
                 <Map
                     city={city}
                     markers={markers}
@@ -72,8 +72,8 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
                 />
             </div>
 
-            <div className="-mt-[50px] lg:mt-0 container">
-                <div className="lg:h-[600px] relative z-10 bg-black/85 backdrop-blur-sm w-full lg:max-w-[500px] rounded-xl p-5 xs:p-8 flex flex-col justify-between space-y-10">
+            <div className="container -mt-[50px] lg:mt-0">
+                <div className="du-panel relative z-10 flex w-full flex-col justify-between space-y-10 rounded-sm p-5 xs:p-8 lg:h-[620px] lg:max-w-[500px]">
                     <div className="space-y-4">
                         <SelectComponent
                             currentValue={selectedCityName}
@@ -96,33 +96,34 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
                         />
                     </div>
                     {selectedClub === null ? (
-                        <div className="text-white space-y-5">
-                            <h3 className="uppercase font-semibold text-[32px]">{t.chooseClub}</h3>
-                            <p>{t.description}</p>
-                            <p>{t.community}</p>
+                        <div className="space-y-5 text-paper">
+                            <span className="du-kicker">city selector</span>
+                            <h3 className="du-display text-[58px]">{t.chooseClub}</h3>
+                            <p className="leading-7 text-paper/70">{t.description}</p>
+                            <p className="leading-7 text-paper/70">{t.community}</p>
                         </div>
                     ) : (
-                        <div className="space-y-5 text-lg">
-                            <div className="flex items-center space-x-3">
-                                <DumbbellSvg className="fill-default w-6 h-6 flex-shrink-0" />
+                        <div className="space-y-5 text-lg text-paper/80">
+                            <div className="flex items-center gap-3">
+                                <DumbbellSvg className="h-6 w-6 flex-shrink-0 fill-acid" />
                                 <p>{selectedClub?.name}</p>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <LocationSvg className="fill-default w-6 h-6 flex-shrink-0" />
+                            <div className="flex items-center gap-3">
+                                <LocationSvg className="h-6 w-6 flex-shrink-0 fill-acid" />
                                 <p>{selectedClub?.address}</p>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <PhoneSvg className="fill-default w-6 h-6 flex-shrink-0" />
+                            <div className="flex items-center gap-3">
+                                <PhoneSvg className="h-6 w-6 flex-shrink-0 fill-acid" />
                                 <p>{selectedClub?.phone}</p>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <TimeSvg className="fill-default w-6 h-6 flex-shrink-0" />
+                            <div className="flex items-center gap-3">
+                                <TimeSvg className="h-6 w-6 flex-shrink-0 fill-acid" />
                                 <p>{t.open24Hours}</p>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <MoneySvg className="fill-default w-6 h-6 flex-shrink-0" />
+                            <div className="flex items-center gap-3">
+                                <MoneySvg className="h-6 w-6 flex-shrink-0 fill-acid" />
                                 <p>
-                                    {t.monthlyPaymentFrom} {selectedClub?.priceForMonth}₽
+                                    {t.monthlyPaymentFrom} £{selectedClub?.priceForMonth}
                                 </p>
                             </div>
                         </div>
@@ -131,14 +132,14 @@ const GymSelectMap = forwardRef<HTMLDivElement>((_, ref) => {
                     {!selectedClub || selectedClub?.name == t.selectGym ? (
                         <button
                             disabled
-                            className="bg-neutral-600 text-neutral-300 w-full p-3 rounded-lg text-center"
+                            className="w-full rounded-sm bg-paper/10 p-3 text-center font-bold uppercase text-paper/35"
                         >
                             {t.select}
                         </button>
                     ) : (
                         <Link
                             to={`/subscription-form?city=${selectedCityName}&gym=${selectedClub?.name}${getSubscriptionSearchParams()}`}
-                            className="bg-default w-full p-3 rounded-lg hover:bg-default-dark transition text-center"
+                            className="du-button w-full p-3 text-center text-sm"
                         >
                             {t.select}
                         </Link>

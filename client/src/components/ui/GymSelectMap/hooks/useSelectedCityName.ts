@@ -5,16 +5,16 @@ import useGymSelectMapTranslation from "./useGymSelectMapTranslation";
 
 export default function useSelectedCityName() {
     const t = useGymSelectMapTranslation();
-    const [selectedCityName, setSelectedCityName] = useState<string>(t.moscow);
+    const [selectedCityName, setSelectedCityName] = useState<string>(t.defaultCity);
     const { uiLanguage } = useLanguage();
     const prevUiLanguage = useRef<Language>(uiLanguage);
 
     useEffect(() => {
         if (prevUiLanguage.current !== uiLanguage) {
-            setSelectedCityName(t.moscow);
+            setSelectedCityName(t.defaultCity);
         }
         prevUiLanguage.current = uiLanguage;
-    }, [selectedCityName, uiLanguage]);
+    }, [t.defaultCity, uiLanguage]);
 
     return { selectedCityName, setSelectedCityName };
 }

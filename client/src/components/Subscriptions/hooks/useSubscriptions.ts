@@ -9,22 +9,22 @@ const translations = {
         monthlyPayment: "Monthly Payment",
     },
     ru: {
-        basicSubscription: "Базовая подписка",
-        smartSubscription: "Грамотная подписка",
-        monthlyPayment: "Ежемесячная Оплата",
+        basicSubscription: "Basic Subscription",
+        smartSubscription: "Smart Subscription",
+        monthlyPayment: "Monthly Payment",
     },
 };
 
 const getSubscriptions = (isMonthly: boolean, locale: "en" | "ru") => ({
     basicSubscription: {
         title: translations[locale].basicSubscription,
-        currentPrice: isMonthly ? 1990 : 19900,
-        ...(isMonthly ? {} : { priceWithoutDiscount: 23880 }),
+        currentPrice: isMonthly ? 29 : 299,
+        ...(isMonthly ? {} : { priceWithoutDiscount: 348 }),
     },
     smartSubscription: {
         title: translations[locale].smartSubscription,
-        currentPrice: isMonthly ? 2490 : 22990,
-        ...(isMonthly ? {} : { priceWithoutDiscount: 29880 }),
+        currentPrice: isMonthly ? 45 : 459,
+        ...(isMonthly ? {} : { priceWithoutDiscount: 540 }),
     },
 });
 

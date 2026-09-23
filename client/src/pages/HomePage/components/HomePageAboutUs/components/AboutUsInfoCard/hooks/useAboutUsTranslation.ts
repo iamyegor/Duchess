@@ -7,7 +7,7 @@ const translations = [
     },
     {
         locale: "ru",
-        buttonText: "Подробнее",
+        buttonText: "Learn More",
     },
 ];
 

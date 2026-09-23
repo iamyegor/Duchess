@@ -1,5 +1,4 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useState, useEffect } from "react";
 
 const translations = [
     {
@@ -15,43 +14,32 @@ const translations = [
         submitButton: "Subscribe",
         subscriptionUnavailable: "Subscription is temporarily unavailable!",
         subscriptions: {
-            "Грамотная подписка": "Smart subscription",
-            "Базовая подписка": "Basic subscription",
-            "Тест-драйв": "Test drive",
+            "Smart Subscription": "Smart subscription",
+            "Basic Subscription": "Basic subscription",
+            "Test Drive": "Test drive",
         },
     },
     {
         locale: "ru",
-        title: "ОФОРМИТЬ АБОНЕМЕНТ",
-        cityPlaceholder: "Выберите город",
-        gymPlaceholder: "Выберите зал",
-        subscriptionPlaceholder: "Выберите абонемент",
-        namePlaceholder: "Имя*",
+        title: "SUBSCRIBE",
+        cityPlaceholder: "Select city",
+        gymPlaceholder: "Select gym",
+        subscriptionPlaceholder: "Select subscription",
+        namePlaceholder: "Name*",
         emailPlaceholder: "E-mail*",
-        privacyPolicy: "Согласие с политикой конфиденциальности",
-        spam: "Получать уведомления о новых акциях и скидках",
-        submitButton: "Записаться",
-        subscriptionUnavailable: "Оформление абонемента временно недоступно!",
+        privacyPolicy: "I agree with the privacy policy",
+        spam: "Receive notifications about new promotions and discounts",
+        submitButton: "Subscribe",
+        subscriptionUnavailable: "Subscription is temporarily unavailable!",
         subscriptions: {
-            "Грамотная подписка": "Грамотная подписка",
-            "Базовая подписка": "Базовая подписка",
-            "Тест-драйв": "Тест-драйв",
+            "Smart Subscription": "Smart subscription",
+            "Basic Subscription": "Basic subscription",
+            "Test Drive": "Test drive",
         },
     },
 ];
 
 export default function useSubscriptionFormTranslation() {
     const { uiLanguage } = useLanguage();
-    const [translation, setTranslation] = useState(translations[0]);
-
-    useEffect(() => {
-        if (uiLanguage) {
-            setTranslation(
-                translations.find((translation) => translation.locale === uiLanguage) ||
-                    translations[0],
-            );
-        }
-    }, []);
-
-    return translation;
+    return translations.find((translation) => translation.locale === uiLanguage) || translations[0];
 }

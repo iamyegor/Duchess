@@ -11,11 +11,11 @@ const translations = [
     },
     {
         locale: "ru",
-        bestOffer: "Лучшее предложение",
-        tryIt: "Попробовать",
-        perMonth: "в месяц",
-        perYear: "в год",
-        free: "Бесплатно",
+        bestOffer: "Best offer",
+        tryIt: "Try it",
+        perMonth: "per month",
+        perYear: "per year",
+        free: "Free",
     },
 ];
 

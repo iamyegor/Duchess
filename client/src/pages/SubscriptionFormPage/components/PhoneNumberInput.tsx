@@ -11,14 +11,14 @@ export default function PhoneNumberInput({ inputClasses }: PhoneNumberInputProps
 
     return (
         <div className="relative">
-            <div className="flex justify-center items-center absolute top-0 bottom-0 left-0">
-                <span className="pl-8">+7</span>
+            <div className="absolute bottom-0 left-0 top-0 flex items-center justify-center">
+                <span className="pl-5 font-bold text-paper/70">+44</span>
             </div>
             <input
                 type="tel"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(formatPhoneNumber(e.target.value))}
-                placeholder="(999) 999-9999"
+                placeholder="20 7946 0958"
                 className={classNames(inputClasses, "!px-[60px]")}
                 required
             />

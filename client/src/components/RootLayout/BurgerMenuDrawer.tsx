@@ -17,8 +17,9 @@ export default function BurgerMenuDrawer({
             anchor="right"
             sx={{
                 "& .MuiDrawer-paper": {
-                    backgroundColor: "black",
-                    color: "#ffffff",
+                    backgroundColor: "#090907",
+                    color: "#fff7e8",
+                    borderLeft: "1px solid rgba(255, 247, 232, 0.14)",
                 },
             }}
             PaperProps={{

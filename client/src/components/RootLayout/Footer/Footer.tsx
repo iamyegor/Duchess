@@ -9,55 +9,41 @@ export default function Footer() {
         {
             name: t.sectionNames.workouts,
             links: [
-                { name: t.subSectionNames.trainers, href: "/" },
-                { name: t.subSectionNames.gym, href: "/" },
-                { name: t.subSectionNames.groupWorkouts, href: "/" },
-                { name: t.subSectionNames.onlineWorkouts, href: "/" },
-                { name: t.subSectionNames.outdoorGroupWorkouts, href: "/" },
-                { name: t.subSectionNames.functionalTraining, href: "/" },
-                { name: t.subSectionNames.strengthTraining, href: "/" },
-                { name: t.subSectionNames.fitnessTesting, href: "/" },
-                { name: t.subSectionNames.studentWorkouts, href: "/" },
-                { name: t.subSectionNames.schedule, href: "/" },
+                { name: t.subSectionNames.programs, href: "/programs" },
+                { name: t.subSectionNames.gym, href: "/gyms" },
             ],
         },
         {
             name: t.sectionNames.services,
             links: [
-                { name: t.subSectionNames.saunasAndHammam, href: "/" },
-                { name: t.subSectionNames.affordableMemberships, href: "/" },
-                { name: t.subSectionNames.singleVisit, href: "/" },
-                { name: t.subSectionNames.fitnessForTeenagers, href: "/" },
+                { name: t.subSectionNames.memberships, href: "/subscriptions" },
             ],
         },
         {
             name: t.sectionNames.clubMembers,
             links: [
-                { name: t.subSectionNames.memberships, href: "/" },
-                { name: t.subSectionNames.partnersAndPrivileges, href: "/" },
-                { name: t.subSectionNames.faq, href: "/" },
+                { name: t.subSectionNames.faq, href: "/faq" },
             ],
         },
         {
             name: t.sectionNames.forTrainees,
             links: [
-                { name: t.subSectionNames.promotions, href: "/" },
-                { name: t.subSectionNames.duchessTV, href: "/" },
-                { name: t.subSectionNames.events, href: "/" },
-                { name: t.subSectionNames.faq, href: "/" },
+                { name: t.subSectionNames.beginners, href: "/beginners" },
+                { name: t.subSectionNames.promotions, href: "/promotions" },
             ],
         },
     ];
 
     return (
-        <footer className="pt-10 pb-28 lg:pb-5 bg-black border-t-2 border-neutral-800">
+        <footer className="relative overflow-hidden border-t border-paper/10 bg-[#080806] pb-32 pt-14 lg:pb-10">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-default to-transparent" />
             <div className="container flex flex-col items-center gap-y-8 lg:gap-y-0">
-                <div className="flex w-full flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between">
+                <div className="flex w-full flex-col gap-10 lg:grid lg:grid-cols-4">
                     {sections.map((section, index) => (
                         <div key={index}>
                             <FooterSectionComponent section={section} />
                             {index !== sections.length - 1 && (
-                                <hr className="block border-neutral-600 lg:hidden" />
+                                <hr className="mt-8 block border-paper/10 lg:hidden" />
                             )}
                         </div>
                     ))}

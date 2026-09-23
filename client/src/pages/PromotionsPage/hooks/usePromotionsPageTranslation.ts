@@ -4,7 +4,7 @@ const translations = [
     {
         locale: "en",
         promotions: "PROMOTIONS",
-        noEntryFee: "0₽ entry fee",
+        noEntryFee: "£0 joining fee",
         discountDescription:
             "100% discount on the entry fee when purchasing a membership in all Duchess Fitness clubs.",
         finalDiscounts: "Final discounts",
@@ -12,12 +12,12 @@ const translations = [
     },
     {
         locale: "ru",
-        promotions: "АКЦИИ",
-        noEntryFee: "0₽ на вступительный взнос",
+        promotions: "PROMOTIONS",
+        noEntryFee: "£0 joining fee",
         discountDescription:
-            "Скидка 100% на вступительный взнос при покупке абонемента во всех клубах сети Duchess Fitness.",
-        finalDiscounts: "Финальные скидки",
-        buyMembership: "КУПИТЬ АБОНЕМЕНТ",
+            "100% discount on the entry fee when purchasing a membership in all Duchess Fitness clubs.",
+        finalDiscounts: "Final discounts",
+        buyMembership: "BUY MEMBERSHIP",
     },
 ];
 

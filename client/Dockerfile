@@ -1,20 +1,19 @@
-# Build image
-FROM node:18-alpine AS build
+FROM oven/bun:1.3.14 AS build
 
 WORKDIR /app
-RUN npm install -g pnpm
-COPY package.json ./
+COPY package.json bun.lock ./
 
-RUN pnpm install
+RUN bun install --frozen-lockfile
 COPY . .
-RUN pnpm run build
+RUN bun run build
 
-# Production image
 FROM nginx:alpine
 
+ENV PORT=8080
+RUN sed -i 's/worker_processes  auto;/worker_processes  1;/' /etc/nginx/nginx.conf
 COPY --from=build /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/templates/default.conf.template
 
-EXPOSE 80
+EXPOSE 80 8080
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]

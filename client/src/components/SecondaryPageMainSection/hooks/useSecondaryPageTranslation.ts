@@ -8,8 +8,8 @@ const translations = [
     },
     {
         locale: "ru",
-        altText: "Основная картинка",
-        buyMembership: "Купить абонемент",
+        altText: "Main image",
+        buyMembership: "Buy Membership",
     },
 ];
 

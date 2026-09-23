@@ -1,4 +1,4 @@
-import axios, {AxiosError, AxiosRequestConfig, AxiosResponse} from "axios";
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import ServerErrorResponse from "@/types/errors/ServerErrorResponse.ts";
 
 const api = axios.create({
@@ -15,7 +15,7 @@ api.interceptors.response.use(
         return response;
     },
 
-    async (error: AxiosError<ServerErrorResponse>): Promise<any> => {
+    async (error: AxiosError<ServerErrorResponse>): Promise<AxiosResponse> => {
         const originalRequest = error.config as CustomAxiosRequestConfig;
 
         try {
@@ -39,11 +39,11 @@ api.interceptors.response.use(
     },
 );
 
-async function refreshToken(): Promise<any> {
+async function refreshToken(): Promise<void> {
     await api.post("refresh-access-token");
 }
 
-async function issueNewDeviceId(): Promise<any> {
+async function issueNewDeviceId(): Promise<void> {
     await api.post("issue-device-id");
 }
 

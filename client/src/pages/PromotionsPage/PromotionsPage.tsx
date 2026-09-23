@@ -3,46 +3,52 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import promotionEnImage from "@/pages/PromotionsPage/assets/promotion-en.webp";
-import promotionRuImage from "@/pages/PromotionsPage/assets/promotion-ru.webp";
 import usePromotionsPageTranslation from "./hooks/usePromotionsPageTranslation";
 
 function PromotionsPage() {
     const { uiLanguage } = useLanguage();
-    const [promotionImage, setPromotionImage] = useState(promotionRuImage);
+    const [promotionImage, setPromotionImage] = useState(promotionEnImage);
 
     useEffect(() => {
-        if (uiLanguage === "ru") {
-            setPromotionImage(promotionRuImage);
-        } else {
-            setPromotionImage(promotionEnImage);
-        }
+        setPromotionImage(promotionEnImage);
     }, [uiLanguage]);
 
     const t = usePromotionsPageTranslation();
 
     return (
-        <div className="flex flex-col pt-4 lg:pt-24 bg-black h-full pb-10">
+        <div className="du-page flex h-full flex-col pb-10 pt-4 lg:pt-28">
             <DuchessLogo theme="light" />
-            <div className="container h-full space-y-10 flex flex-col">
-                <h1 className="text-[42px] xs:text-[50px] font-semibold">{t.promotions}</h1>
-                <div className="bg-neutral-950 border border-neutral-700 text-white rounded-xl flex h-auto md:h-[350px] lg:h-[500px] flex-col md:flex-row">
-                    <div className="flex-none " style={{ aspectRatio: "1 / 1" }}>
+            <div className="container flex h-full flex-col space-y-10">
+                <div>
+                    <span className="du-kicker">limited pass</span>
+                    <h1 className="du-display text-[76px] text-paper xs:text-[104px]">
+                        {t.promotions}
+                    </h1>
+                </div>
+                <div className="du-panel flex h-auto flex-col overflow-hidden rounded-sm text-paper md:h-[370px] md:flex-row lg:h-[520px]">
+                    <div className="flex-none" style={{ aspectRatio: "1 / 1" }}>
                         <img
                             src={promotionImage}
                             alt="Promotion Image"
-                            className="mr-8 w-full h-full rounded-t-xl md:rounded-tr-none md:rounded-l-xl object-cover"
+                            className="h-full w-full object-cover"
                         />
                     </div>
-                    <div className="flex flex-1 flex-col justify-between p-6 lg:p-8 space-y-4">
+                    <div className="flex flex-1 flex-col justify-between space-y-4 p-6 lg:p-10">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold mb-4">{t.noEntryFee}</h1>
-                            <p className="text-[20px] mb-6">{t.discountDescription}</p>
+                            <h1 className="du-display mb-5 text-6xl lg:text-8xl">
+                                {t.noEntryFee}
+                            </h1>
+                            <p className="mb-6 max-w-xl text-[20px] leading-8 text-paper/70">
+                                {t.discountDescription}
+                            </p>
                         </div>
-                        <div className="flex flex-col space-y-4 lg:space-y-0 lg:flex-row justify-between items-center">
-                            <span className="text-base">{t.finalDiscounts}</span>
+                        <div className="flex flex-col items-center justify-between gap-4 lg:flex-row">
+                            <span className="border-l-4 border-acid pl-4 text-base font-bold text-paper/80">
+                                {t.finalDiscounts}
+                            </span>
                             <Link
                                 to="/gyms"
-                                className="bg-default hover:default-dark font-semibold py-3 px-8 rounded-lg w-full lg:w-auto text-center"
+                                className="du-button w-full px-8 py-3 text-center text-sm lg:w-auto"
                             >
                                 {t.buyMembership}
                             </Link>

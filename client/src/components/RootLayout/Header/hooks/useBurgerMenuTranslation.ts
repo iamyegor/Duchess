@@ -13,13 +13,13 @@ const translations = [
     },
     {
         locale: "ru",
-        chooseClub: "Выбрать клуб",
-        subscriptions: "Абонементы",
-        programsAndDirections: "Направления и программы",
-        forNewClients: "Для новых клиентов",
-        promotions: "Акции",
-        faq: "Частые вопросы",
-        close: "Закрыть",
+        chooseClub: "Choose a Club",
+        subscriptions: "Subscriptions",
+        programsAndDirections: "Programs",
+        forNewClients: "For New Clients",
+        promotions: "Promotions",
+        faq: "FAQ",
+        close: "Close",
     },
 ];
 

@@ -16,23 +16,25 @@ export default function SecondaryPageMainSection({
     const t = useSecondaryPageTranslation();
 
     return (
-        <div className="flex flex-col pt-2 items-center relative h-[650px]">
+        <div className="relative flex h-[680px] flex-col items-center overflow-hidden pt-2">
             <DuchessLogo />
             <div className="absolute inset-0">
-                <img src={img} alt={t.altText} className="w-full h-full object-cover" />
+                <img src={img} alt={t.altText} className="h-full w-full object-cover opacity-72" />
             </div>
-            <div className="z-10 container h-full flex items-center p-4">
-                <div className="flex flex-col justify-start lg:max-w-[650px]">
-                    <h1 className="text-[24px] xs:text-[30px] sm:text-[50px] font-bold mb-4 leading-[1.1] tracking-tight">
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.95),rgba(5,5,5,0.62),rgba(5,5,5,0.25))]" />
+            <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#050505] to-transparent" />
+            <div className="container z-10 flex h-full items-center p-4">
+                <div className="du-animate-rise flex flex-col justify-start lg:max-w-[760px]">
+                    <span className="du-kicker">duchess program</span>
+                    <h1 className="du-display mb-6 text-[64px] text-paper xs:text-[76px] sm:text-[118px]">
                         {title}
                     </h1>
-                    <p className="mb-12">{description}</p>
+                    <p className="mb-12 max-w-xl border-l border-paper/20 pl-5 leading-7 text-paper/72">
+                        {description}
+                    </p>
                     <Link
                         to="/gyms"
-                        className="px-6 py-4 w-full sm:w-[320px] border-2
-                         rounded-xl 
-                        bg-default  border-neutral-700 text-white 
-                        hover:shadow-2xl transition text-center"
+                        className="du-button w-full text-center text-sm tracking-[0.14em] sm:w-[320px]"
                     >
                         {t.buyMembership}
                     </Link>

@@ -9,13 +9,13 @@ import useBottomNavTranslation from "./hooks/useBottomNavTranslation";
 export default function BottomNavBar() {
     const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
     const t = useBottomNavTranslation();
-    const svgClassName = "fill-white group-hover:fill-neutral-300 w-5 xs:w-6 h-5 xs:h-6";
+    const svgClassName = "fill-paper group-hover:fill-default w-5 xs:w-6 h-5 xs:h-6";
 
     const itemClassName =
-        "flex flex-col items-center justify-center space-y-2 w-[95px] group hover:text-neutral-300 text-xs xs:text-sm";
+        "flex flex-col items-center justify-center space-y-1.5 w-[95px] group hover:text-default text-[11px] xs:text-xs font-bold uppercase tracking-[0.08em]";
 
     return (
-        <nav className="flex lg:hidden fixed bottom-0 left-0 right-0 border-t border-t-neutral-500 bg-black justify-evenly items-center p-3 z-20">
+        <nav className="fixed bottom-3 left-3 right-3 z-20 flex items-center justify-evenly rounded-sm border border-paper/15 bg-ink/90 p-3 text-paper shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-xl lg:hidden">
             <BurgerMenuDrawer
                 burgerMenuOpen={burgerMenuOpen}
                 setBurgerMenuOpen={setBurgerMenuOpen}
@@ -24,7 +24,7 @@ export default function BottomNavBar() {
                 <LocationSvg className={svgClassName} />
                 <p>{t.selectGym}</p>
             </Link>
-            <a href={`tel:+79999999999`} className={itemClassName}>
+            <a href={`tel:+442079460958`} className={itemClassName}>
                 <PhoneSvg className={svgClassName} />
                 <p>{t.call}</p>
             </a>

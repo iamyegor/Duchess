@@ -1,34 +1,29 @@
-import {
-    FormControl,
-    InputLabel,
-    MenuItem,
-    Select,
-    SelectChangeEvent,
-    styled,
-} from "@mui/material";
+import { MenuItem, Select, SelectChangeEvent, styled } from "@mui/material";
 import { useEffect, useState } from "react";
 import ArrowDownSvg from "@/assets/homePage/arrow-down.svg?react";
 
 const StyledSelect = styled(Select)({
-    backgroundColor: "#262626",
-    color: "#e5e5e5",
-    borderRadius: "12px",
+    backgroundColor: "#171714",
+    color: "#fff7e8",
+    borderRadius: "2px",
     padding: "8px 16px",
+    fontFamily: "Commissioner, sans-serif",
+    fontWeight: 700,
     ".MuiOutlinedInput-notchedOutline": {
-        borderColor: "rgba(228, 219, 233, 0.25)",
+        borderColor: "rgba(255, 247, 232, 0.15)",
     },
     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "rgba(228, 219, 233, 0.25)",
+        borderColor: "#FF7700",
     },
     "&:hover .MuiOutlinedInput-notchedOutline": {
-        borderColor: "rgba(228, 219, 233, 0.25)",
+        borderColor: "rgba(255, 119, 0, 0.7)",
     },
     "& .MuiSelect-select": {
         padding: "8px 16px",
         minHeight: "20px",
     },
     "&:hover": {
-        backgroundColor: "#444",
+        backgroundColor: "#22221e",
     },
     "& .MuiSvgIcon-root": {
         color: "#F95700",
@@ -40,8 +35,9 @@ const menuProps = {
         style: {
             padding: "0px 8px 0 8px",
             marginTop: "4px",
-            borderRadius: "12px",
-            backgroundColor: "#333",
+            borderRadius: "2px",
+            backgroundColor: "#11110f",
+            border: "1px solid rgba(255, 247, 232, 0.12)",
         },
     },
 };
@@ -49,14 +45,15 @@ const menuProps = {
 const StyledMenuItem = styled(MenuItem)({
     marginTop: "4px",
     padding: "8px 16px",
-    color: "#fff",
-    borderRadius: "8px",
-    backgroundColor: "#333",
+    color: "#fff7e8",
+    borderRadius: "2px",
+    backgroundColor: "#11110f",
+    fontFamily: "Commissioner, sans-serif",
     "&:hover": {
-        backgroundColor: "#666 !important",
+        backgroundColor: "rgba(255, 119, 0, 0.22) !important",
     },
     "&.Mui-selected": {
-        backgroundColor: "#555 !important",
+        backgroundColor: "rgba(184, 255, 88, 0.14) !important",
     },
 });
 
@@ -71,11 +68,12 @@ export default function SelectComponent({
     defaultValue?: string;
     currentValue?: string;
 }) {
-    const [value, setValue] = useState<string>(currentValue ?? values[0]);
+    const selectedValue = currentValue ?? values[0];
+    const [value, setValue] = useState<string>(selectedValue);
 
     useEffect(() => {
-        setValue(currentValue ?? values[0]);
-    }, [currentValue]);
+        setValue(selectedValue);
+    }, [selectedValue]);
 
     const handleChange = (event: SelectChangeEvent<unknown>) => {
         onChange(event);

@@ -78,6 +78,7 @@ ScaffoldingReadMe.txt
 # Production build files
 /dist
 /build
+client/dist/
 
 # Environment files
 .env

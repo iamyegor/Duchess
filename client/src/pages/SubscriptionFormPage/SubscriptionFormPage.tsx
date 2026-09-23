@@ -28,8 +28,7 @@ export default function SubscriptionFormPage() {
     const [isPrivacyPolicyChecked, setIsPrivacyPolicyChecked] = useState(false);
     const [isSpamChecked, setIsSpamChecked] = useState(false);
 
-    const inputClasses =
-        "w-full px-8 py-3.5 text-gray-200 bg-neutral-800 border border-neutral-500 border-none rounded-xl focus:outline-none focus:ring-2 focus:ring-default placeholder:text-neutral-400";
+    const inputClasses = "du-field";
 
     function getGymsForCity() {
         return locations.find((x) => x.name === selectedCity)?.markers.map((x) => x.name) ?? [];
@@ -41,16 +40,19 @@ export default function SubscriptionFormPage() {
     }
 
     return (
-        <div className="flex flex-col bg-black h-full">
+        <div className="du-page flex h-full flex-col">
             <DuchessLogo />
-            <div className="container h-full pb-14 pt-4 space-y-4 min-h-[700px]">
-                <h2 className="text-xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-center lg:text-left">
-                    {t.title}
-                </h2>
+            <div className="container h-full min-h-[700px] space-y-8 pb-20 pt-4 lg:pt-24">
+                <div>
+                    <span className="du-kicker">join request</span>
+                    <h2 className="du-display text-center text-6xl text-paper xs:text-7xl sm:text-8xl lg:text-left">
+                        {t.title}
+                    </h2>
+                </div>
                 <div className="h-full flex items-center justify-center">
                     <form
                         onSubmit={subscribe}
-                        className="space-y-7 bg-neutral-800/30 border border-neutral-500/40 max-w-xl p-4 py-6 xs:p-6 sm:p-10 rounded-xl"
+                        className="du-panel grid w-full max-w-2xl gap-5 rounded-sm p-4 py-6 xs:p-6 sm:p-10"
                     >
                         <SelectComponent
                             currentValue={selectedCity}
@@ -83,29 +85,29 @@ export default function SubscriptionFormPage() {
                             className={inputClasses}
                             required
                         />
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center gap-3">
                             <Checkbox
                                 id="privacyPolicy"
                                 isChecked={isPrivacyPolicyChecked}
                                 onClick={() => setIsPrivacyPolicyChecked((prev) => !prev)}
                             />
-                            <label htmlFor="privacyPolicy" className="text-gray-200">
+                            <label htmlFor="privacyPolicy" className="text-sm leading-6 text-paper/70">
                                 {t.privacyPolicy}
                             </label>
                         </div>
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center gap-3">
                             <Checkbox
                                 id="spam"
                                 isChecked={isSpamChecked}
                                 onClick={() => setIsSpamChecked((prev) => !prev)}
                             />
-                            <label htmlFor="spam" className="text-gray-200">
+                            <label htmlFor="spam" className="text-sm leading-6 text-paper/70">
                                 {t.spam}
                             </label>
                         </div>
                         <button
                             type="submit"
-                            className="w-full py-3 bg-default text-white font-semibold rounded-lg hover:bg-orange-600 transition duration-300"
+                            className="du-button w-full py-4 text-sm tracking-[0.14em]"
                         >
                             {t.submitButton}
                         </button>

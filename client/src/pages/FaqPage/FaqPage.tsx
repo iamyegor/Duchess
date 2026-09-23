@@ -7,10 +7,14 @@ export default function FaqPage() {
     const translation = useFaqTranslation();
 
     return (
-        <div className="bg-black h-full pt-4 lg:pt-24">
-            <div className="my-6 container">
+        <div className="du-page h-full pt-4 lg:pt-28">
+            <div className="container my-6">
                 <DuchessLogo theme="light" />
-                <div>
+                <div className="mb-8">
+                    <span className="du-kicker">questions</span>
+                    <h1 className="du-display text-7xl text-paper sm:text-9xl">FAQ</h1>
+                </div>
+                <div className="space-y-3">
                     {translation.faqs.map((faq, index) => (
                         <AccordionItem key={index} question={faq.question}>
                             {faq.answer}

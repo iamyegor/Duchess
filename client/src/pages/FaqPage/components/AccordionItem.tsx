@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PlusSvg from "@/assets/faqPage/plus.svg?react";
 import MuiAccordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -11,26 +11,29 @@ interface AccordionItemProps {
 }
 
 const Accordion = styled(MuiAccordion)({
-    padding: "16px",
-    className: "rounded-xl",
-    borderRadius: "1rem",
+    padding: "0",
+    borderRadius: "2px",
+    border: "1px solid rgba(255, 247, 232, 0.12)",
+    overflow: "hidden",
     "& .MuiAccordionSummary-root": {
-        borderRadius: "1rem",
+        borderRadius: "2px",
     },
-    background: "black",
-    color: "white",
+    background: "#11110f",
+    color: "#fff7e8",
 });
 
 export default function AccordionItem({ question, children }: AccordionItemProps) {
     return (
-        <Accordion square={true} className="bg-neutral-950">
+        <Accordion square={true}>
             <AccordionSummary
-                expandIcon={<PlusSvg className="fill-default w-10 h-10 bg-neutral-950" />}
-                style={{backgroundColor: "#0a0a0a", padding: "15px 30px 15px 30px"}}
+                expandIcon={<PlusSvg className="h-10 w-10 fill-default" />}
+                style={{ backgroundColor: "#11110f", padding: "20px 30px" }}
             >
-                <p className="text-default text-lg font-medium">{question}</p>
+                <p className="text-lg font-bold text-paper">{question}</p>
             </AccordionSummary>
-            <AccordionDetails className="max-w-[550px] mt-[20px]">{children}</AccordionDetails>
+            <AccordionDetails className="mt-[10px] max-w-[720px] leading-7 text-paper/70">
+                {children}
+            </AccordionDetails>
         </Accordion>
     );
 }

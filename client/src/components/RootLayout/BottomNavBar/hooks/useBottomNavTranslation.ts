@@ -9,9 +9,9 @@ const translations = [
     },
     {
         locale: "ru",
-        selectGym: "Выбрать клуб",
-        call: "Позвонить",
-        menu: "Меню",
+        selectGym: "Select Gym",
+        call: "Call",
+        menu: "Menu",
     },
 ];
 

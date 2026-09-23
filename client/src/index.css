@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Commissioner:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,10 +11,55 @@ body,
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    color: white;
+    font-family: "Commissioner", sans-serif;
+    color: #fff7e8;
     box-sizing: border-box;
-    @apply bg-black;
+    background:
+        radial-gradient(circle at 14% 8%, rgba(255, 119, 0, 0.18), transparent 26rem),
+        radial-gradient(circle at 88% 18%, rgba(184, 255, 88, 0.1), transparent 22rem),
+        linear-gradient(135deg, #050505 0%, #10100d 45%, #060605 100%);
+    min-width: 320px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.18;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+::selection {
+    background: #ff7700;
+    color: #070706;
+}
+
+a,
+button,
+select,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+button:hover,
+a:hover {
+    transform: translateY(-1px);
 }
 
 @font-face {
@@ -22,4 +67,68 @@ body {
     src: url("/src/assets/fonts/sofa.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
+}
+
+@layer components {
+    .du-page {
+        @apply relative overflow-hidden bg-[#050505] text-[#fff7e8];
+    }
+
+    .du-section {
+        @apply relative py-16 sm:py-20 lg:py-24;
+    }
+
+    .du-display {
+        font-family: "Bebas Neue", "Commissioner", sans-serif;
+        letter-spacing: 0;
+        line-height: 0.92;
+        text-transform: uppercase;
+    }
+
+    .du-panel {
+        @apply border border-[#fff7e8]/15 bg-[#11110f]/85 shadow-[0_24px_90px_rgba(0,0,0,0.42)] backdrop-blur-xl;
+    }
+
+    .du-photo-frame {
+        @apply overflow-hidden border border-[#fff7e8]/15 bg-[#11110f] shadow-[0_26px_80px_rgba(0,0,0,0.45)];
+    }
+
+    .du-photo-frame img {
+        filter: saturate(0.96) contrast(1.05);
+    }
+
+    .du-button {
+        @apply inline-flex items-center justify-center rounded-sm bg-default px-7 py-4 font-bold uppercase text-[#070706] shadow-[0_14px_35px_rgba(255,119,0,0.22)];
+    }
+
+    .du-button:hover {
+        @apply bg-[#ff9f1c] shadow-[0_18px_45px_rgba(255,119,0,0.32)];
+    }
+
+    .du-button-muted {
+        @apply inline-flex items-center justify-center rounded-sm border border-[#fff7e8]/20 bg-[#fff7e8]/8 px-7 py-4 font-bold uppercase text-[#fff7e8];
+    }
+
+    .du-kicker {
+        @apply mb-4 inline-flex border-l-4 border-[#b8ff58] pl-3 text-xs font-extrabold uppercase tracking-[0.22em] text-[#b8ff58];
+    }
+
+    .du-field {
+        @apply w-full rounded-sm border border-[#fff7e8]/15 bg-[#171714] px-5 py-4 text-[#fff7e8] outline-none placeholder:text-[#fff7e8]/45 focus:border-default focus:ring-2 focus:ring-default/25;
+    }
+}
+
+@keyframes du-rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.du-animate-rise {
+    animation: du-rise 680ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }

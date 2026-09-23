@@ -1,5 +1,4 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useEffect, useState } from "react";
 
 export const translations = [
     {
@@ -10,18 +9,18 @@ export const translations = [
         buttonText: "Buy with discount",
         placeholders: {
             gymImageAlt: "Gym background image",
-            girlImageAlt: "Beautiful Girl",
+            memberImageAlt: "Fitness club member",
         },
     },
     {
         locale: "ru",
-        title: "ЗАЛ DUCHESS FITNESS",
+        title: "DUCHESS FITNESS GYM",
         description:
-            "DUCHESS FITNESS — это место, где ваша дисциплина и решимость встречаются с поддержкой и мотивацией. Мы создаем уютную и дружелюбную атмосферу для тех, кто стремится к лучшей версии себя.",
-        buttonText: "Купить со скидкой",
+            "DUCHESS FITNESS is a place where your discipline and determination meet support and motivation. We create a cozy and friendly atmosphere for those who strive for the best version of themselves.",
+        buttonText: "Buy with discount",
         placeholders: {
-            gymImageAlt: "Фоновое изображение зала",
-            girlImageAlt: "Красивая Девушка",
+            gymImageAlt: "Gym background image",
+            memberImageAlt: "Fitness club member",
         },
     },
 ];

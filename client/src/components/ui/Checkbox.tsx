@@ -13,11 +13,11 @@ export default function Checkbox({ id, isChecked, onClick, className }: Checkbox
         <button
             id={id}
             type="button"
-            className={`w-[22px] h-[22px] rounded-md flex justify-center items-center cursor-pointer border 
-                             ${isChecked ? "bg-default border-default-lighter" : "border-neutral-300"} p-[3px] flex-shrink-0 ${className}`}
+            className={`flex h-[22px] w-[22px] flex-shrink-0 cursor-pointer items-center justify-center rounded-sm border
+                             ${isChecked ? "border-acid bg-acid" : "border-paper/35 bg-paper/5"} p-[3px] ${className}`}
             onClick={onClick}
         >
-            {isChecked && <CheckSvg className="fill-white w-full h-full" />}
+            {isChecked && <CheckSvg className="h-full w-full fill-ink" />}
         </button>
     );
 }

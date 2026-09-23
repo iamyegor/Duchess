@@ -17,24 +17,37 @@ export default function SecondaryPageSection({
     imageAlignment,
 }: ProgramsPageSectionProps) {
     return (
-        <div className="py-24">
+        <div
+            className={classNames("relative overflow-hidden py-20 lg:py-28", {
+                "bg-[#0b0b09]": bgColor === "black",
+                "bg-[linear-gradient(135deg,#19100a_0%,#0b0b09_52%,#140f08_100%)]":
+                    bgColor === "orange",
+            })}
+        >
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-paper/15 to-transparent" />
             <div
                 className={classNames(
-                    "flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-x-14 container lg:items-center",
+                    "container flex flex-col space-y-10 lg:flex-row lg:items-center lg:gap-x-16 lg:space-y-0",
                     {
                         "lg:flex-row-reverse": imageAlignment === "left",
                     },
                 )}
             >
-                <div className="flex-1 text-white space-y-8">
-                    <h2 className="text-3xl sm:text-5xl font-semibold">{title}</h2>
-                    <p className="text-[16px] font-medium">{content}</p>
+                <div className="flex-1 space-y-8 text-paper">
+                    <span className="du-kicker">training zone</span>
+                    <h2 className="du-display text-6xl sm:text-8xl">{title}</h2>
+                    <p className="max-w-xl text-[16px] font-medium leading-8 text-paper/70">
+                        {content}
+                    </p>
                 </div>
-                <div className="flex-1 h-min" style={{ aspectRatio: "16/10" }}>
+                <div
+                    className="du-photo-frame h-min flex-1 rounded-sm"
+                    style={{ aspectRatio: "16/10" }}
+                >
                     <img
                         src={image}
                         alt="Section Image"
-                        className="w-full h-full object-cover rounded-xl"
+                        className="h-full w-full object-cover"
                     />
                 </div>
             </div>

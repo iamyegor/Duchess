@@ -3,7 +3,7 @@ import Subscriptions from "@/components/Subscriptions/Subscriptions.tsx";
 
 export default function SubscriptionsPage() {
     return (
-        <div className="flex flex-col bg-black h-full">
+        <div className="du-page flex h-full flex-col">
             <DuchessLogo theme="light" />
             <Subscriptions />
         </div>

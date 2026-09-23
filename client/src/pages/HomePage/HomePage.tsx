@@ -13,10 +13,10 @@ export default function HomePage() {
     }
 
     return (
-        <div className="flex flex-col bg-black h-full">
+        <div className="du-page flex h-full flex-col">
             <HomePageFirstPart onButtonClick={scrollToMap} />
             <BenefitsSection />
-            <div className="lg:h-auto pb-[100px] md:pb-16">
+            <div className="relative pb-[100px] md:pb-16 lg:h-auto">
                 <GymSelectMap ref={mapRef} />
             </div>
             <Subscriptions />

@@ -12,7 +12,7 @@ export default function useSelectedPaymentType(localizedMonthly: string) {
             setSelectedPaymentType(localizedMonthly);
         }
         prevUiLanguage.current = uiLanguage;
-    }, [selectedPaymentType, uiLanguage]);
+    }, [localizedMonthly, uiLanguage]);
 
     return { selectedPaymentType, setSelectedPaymentType };
 }

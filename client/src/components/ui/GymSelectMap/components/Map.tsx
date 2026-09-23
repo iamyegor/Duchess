@@ -6,7 +6,7 @@ import {
     YMapDefaultFeaturesLayer,
     YMapDefaultSchemeLayer,
 } from "ymap3-components";
-import React, { SetStateAction, useEffect, useMemo, useState } from "react";
+import React, { SetStateAction, useCallback, useEffect, useMemo, useState } from "react";
 import DuchessMapMarker from "./DuchessMapMarker.tsx";
 import { City } from "@/components/ui/GymSelectMap/types/City.ts";
 import { Marker } from "@/components/ui/GymSelectMap/types/Marker.ts";
@@ -22,20 +22,30 @@ function Map({
     selectedMarker: Marker | null;
     setSelectedMarker: React.Dispatch<SetStateAction<Marker | null>>;
 }) {
-    const handleResize = () => {
-        let centerCoordinates: LngLat;
-
+    const center = useMemo<LngLat>(() => {
         if (window.outerWidth >= 1024) {
-            centerCoordinates = city.laptopCenterCoordinates!;
-        } else {
-            centerCoordinates = city.coordinates;
+            return city.laptopCenterCoordinates ?? city.coordinates;
         }
+
+        return city.coordinates;
+    }, [city]);
+
+    const [centerLocation, setCenterLocation] = useState<YMaps.YMapLocationRequest>({
+        center,
+        zoom: 12,
+    });
+
+    const handleResize = useCallback(() => {
+        const centerCoordinates =
+            window.outerWidth >= 1024
+                ? (city.laptopCenterCoordinates ?? city.coordinates)
+                : city.coordinates;
 
         setCenterLocation({
             center: centerCoordinates,
             zoom: 12,
         });
-    };
+    }, [city.coordinates, city.laptopCenterCoordinates]);
 
     useEffect(() => {
         window.addEventListener("resize", handleResize);
@@ -43,27 +53,14 @@ function Map({
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
-
-    const center = useMemo(() => {
-        if (window.outerWidth >= 1024) {
-            return city.laptopCenterCoordinates;
-        }
-
-        return city.coordinates;
-    }, [city, window.outerWidth]);
+    }, [handleResize]);
 
     useEffect(() => {
         setCenterLocation({
-            center: center!,
+            center,
             zoom: 12,
         });
     }, [center]);
-
-    const [centerLocation, setCenterLocation] = useState<YMaps.YMapLocationRequest>({
-        center: center!,
-        zoom: 12,
-    });
 
     useEffect(() => {
         if (selectedMarker) {
@@ -77,10 +74,10 @@ function Map({
                 easing: "ease-out",
             });
         }
-    }, [selectedMarker]);
+    }, [center, city.coordinates, selectedMarker]);
 
     return (
-        <YMapComponentsProvider apiKey="5949372d-04c6-4c82-8d2b-f7ae4ac61d58">
+        <YMapComponentsProvider apiKey="5949372d-04c6-4c82-8d2b-f7ae4ac61d58" lang="en_US">
             <YMap location={centerLocation} mode="vector" theme="dark">
                 <YMapDefaultSchemeLayer />
                 <YMapDefaultFeaturesLayer />

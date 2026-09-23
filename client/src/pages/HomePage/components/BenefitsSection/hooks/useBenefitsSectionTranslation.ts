@@ -22,19 +22,19 @@ const translations = [
     {
         locale: "ru",
         title: {
-            part1: "С DUCHESS FITNESS",
-            part2: "ВЫ ПОЛУЧИТЕ",
+            part1: "DUCHESS FITNESS",
+            part2: "OFFERS YOU",
         },
         benefits: [
-            "Уникальные тренировки",
-            "Индивидуальный подход",
-            "Профессиональные тренера",
-            "Современное оборудование",
-            "Приятную атмосферу",
-            "Грамотный дюшес",
+            "Unique workouts",
+            "Individual approach",
+            "Professional trainers",
+            "Modern equipment",
+            "Pleasant atmosphere",
+            "Proper duchess",
         ],
         placeholders: {
-            gymImageAlt: "Зал",
+            gymImageAlt: "Gym",
         },
     },
 ];

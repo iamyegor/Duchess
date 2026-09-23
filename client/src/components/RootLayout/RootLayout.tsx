@@ -14,7 +14,7 @@ export default function RootLayout() {
     return (
         <>
             <Header />
-            <div className="flex justify-center">
+            <div className="flex justify-center bg-transparent">
                 <div className="min-h-screen w-full">
                     <Outlet />
                 </div>

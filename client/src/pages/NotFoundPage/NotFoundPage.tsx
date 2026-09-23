@@ -2,21 +2,21 @@ import { Link } from "react-router-dom";
 
 export default function NotFoundPage() {
     return (
-        <div className="h-full flex flex-col md:flex-row items-center justify-center p-6">
+        <div className="du-page flex h-full min-h-screen flex-col items-center justify-center p-6 md:flex-row">
             <div className="flex flex-col items-center md:items-start">
-                <h1 className="text-8xl font-medium italic mb-8">404</h1>
+                <h1 className="du-display mb-8 text-[150px] text-default">404</h1>
                 <div
-                    className="text-lg max-w-[500px] mb-10 text-center md:text-left mx-4 
+                    className="mx-4 mb-10 max-w-[500px] text-center text-lg text-paper/70
                     md:mx-0"
                 >
-                    Страница не найдена
+                    Page not found
                 </div>
-                <div className="flex space-x-4 w-full">
+                <div className="flex w-full space-x-4">
                     <Link
                         to="/"
-                        className="bg-black w-full text-center hover:bg-neutral-900 font-medium py-3 rounded-xl"
+                        className="du-button w-full py-3 text-center text-sm"
                     >
-                        Домой
+                        Home
                     </Link>
                 </div>
             </div>

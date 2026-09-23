@@ -14,7 +14,7 @@ export default function useMarkers(locations: City[]) {
             setMarkers(locations.flatMap((x) => x.markers));
         }
         prevUiLanguage.current = uiLanguage;
-    }, [uiLanguage]);
+    }, [locations, uiLanguage]);
 
     return { markers, setMarkers };
 }

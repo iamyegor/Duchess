@@ -12,7 +12,10 @@ interface HeaderLinkProps {
 export default function HeaderLink({ to, children, onMouseEnter, onMouseLeave, onClick }: HeaderLinkProps) {
     return (
         <button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick}>
-            <Link to={to} className="text-sm hover:text-neutral-300">
+            <Link
+                to={to}
+                className="block rounded-sm px-5 py-3 text-xs tracking-[0.16em] text-paper/75 hover:bg-paper/10 hover:text-paper"
+            >
                 {children}
             </Link>
         </button>

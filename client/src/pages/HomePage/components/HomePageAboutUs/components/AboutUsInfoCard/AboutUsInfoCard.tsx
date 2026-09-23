@@ -10,14 +10,14 @@ export default function AboutUsInfoCard({ title, content }: CardProps) {
     const t = useAboutUsTranslation();
 
     return (
-        <div className="bg-neutral-950 border border-neutral-700 text-white p-8 rounded-xl space-y-8 xs:space-y-12 flex flex-col justify-between h-full">
+        <div className="du-panel flex h-full flex-col justify-between space-y-8 rounded-sm p-8 text-paper xs:space-y-12">
             <div className="space-y-4">
-                <h2 className="text-xl font-bold">{title}</h2>
-                <p className="text-base">{content}</p>
+                <h2 className="du-display text-4xl">{title}</h2>
+                <p className="text-base leading-7 text-paper/70">{content}</p>
             </div>
             <Link
                 to="/beginners"
-                className="bg-default w-full text-white py-3 rounded-lg hover:bg-default-dark transition duration-300 flex justify-center items-center"
+                className="du-button flex w-full items-center justify-center py-3 text-sm"
             >
                 {t.buttonText}
             </Link>

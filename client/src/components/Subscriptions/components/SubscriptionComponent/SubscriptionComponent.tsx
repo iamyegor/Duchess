@@ -25,25 +25,24 @@ export default function SubscriptionComponent({
 }: SubscriptionComponentType) {
     const t = useSubscriptionTranslation();
 
-    const isMonthlyPayment =
-        paymentType === "Monthly Payment" || paymentType === "Ежемесячная Оплата";
+    const isMonthlyPayment = paymentType === "Monthly Payment";
 
     return (
         <div
-            className={`flex-1 rounded-xl bg-neutral-950 border-neutral-700 border p-8 h-full max-w-full flex flex-col justify-between ${className} relative`}
+            className={`du-panel relative flex h-full max-w-full flex-1 flex-col justify-between rounded-sm p-8 ${className}`}
         >
             {isBest && (
-                <div className="bg-default text-sm text-black rounded-lg p-3 py-2 flex items-center space-x-3 absolute -top-5 left-5 sm:left-auto right-5 border-2 border-black">
-                    <TrophySvg className="fill-black w-5 h-5 flex-shrink-0" />
+                <div className="absolute -top-5 left-5 flex items-center gap-3 rounded-sm border border-ink bg-acid p-3 py-2 text-sm font-extrabold uppercase text-ink sm:left-auto sm:right-5">
+                    <TrophySvg className="h-5 w-5 flex-shrink-0 fill-ink" />
                     <p>{t.bestOffer}</p>
                 </div>
             )}
             <div className="space-y-4 mb-12 mt-2">
-                <h3 className="text-2xl font-medium">{subscription.title}</h3>
+                <h3 className="du-display text-5xl text-paper">{subscription.title}</h3>
                 <ul className={`text-sm xs:text-base space-y-4 ${className}`}>
                     {benefits.map((benefit, index) => (
-                        <li key={index} className="text-white flex items-center space-x-3 ml-1">
-                            <CheckSvg className="fill-default w-5 h-5 mt-1 flex-shrink-0" />
+                        <li key={index} className="ml-1 flex items-center gap-3 text-paper/78">
+                            <CheckSvg className="mt-1 h-5 w-5 flex-shrink-0 fill-acid" />
                             <p>{benefit}</p>
                         </li>
                     ))}
@@ -51,32 +50,32 @@ export default function SubscriptionComponent({
                         notAllowed.map((notAllowedItem, index) => (
                             <li
                                 key={index}
-                                className="text-neutral-500 flex items-center space-x-3"
+                                className="flex items-center gap-3 text-paper/32"
                             >
-                                <SmallCrossSvg className="fill-neutral-500 w-7 h-7 flex-shrink-0" />
+                                <SmallCrossSvg className="h-7 w-7 flex-shrink-0 fill-paper/32" />
                                 <p>{notAllowedItem}</p>
                             </li>
                         ))}
                 </ul>
             </div>
             <div className="space-y-8">
-                <h3 className="text-center font-medium text-xl space-x-3 flex flex-col space-y-2">
+                <h3 className="flex flex-col space-y-2 text-center text-xl font-bold">
                     {subscription.priceWithoutDiscount && (
-                        <span className="line-through text-neutral-400 text-sm ">
-                            {subscription.priceWithoutDiscount}₽{" "}
+                        <span className="text-sm text-paper/40 line-through">
+                            £{subscription.priceWithoutDiscount}{" "}
                             {isMonthlyPayment ? t.perMonth : t.perYear}
                         </span>
                     )}
-                    <span>
+                    <span className="du-display text-5xl text-default">
                         {subscription.currentPrice
-                            ? `${subscription.currentPrice}₽ ${isMonthlyPayment ? t.perMonth : t.perYear}`
+                            ? `£${subscription.currentPrice} ${isMonthlyPayment ? t.perMonth : t.perYear}`
                             : t.free}
                     </span>
                 </h3>
                 <div>
                     <Link
                         to={`/gyms?subscription=${subscription.title}&paymentType=${paymentType}`}
-                        className="bg-default hover:bg-default/90 block rounded-lg p-3 transition text-center"
+                        className="du-button block p-3 text-center text-sm"
                     >
                         {t.tryIt}
                     </Link>

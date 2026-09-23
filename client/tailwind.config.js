@@ -6,6 +6,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                display: ["Bebas Neue", defaultTheme.fontFamily.sans],
+                body: ["Commissioner", defaultTheme.fontFamily.sans],
                 sofa: ["Sofa", defaultTheme.fontFamily.sans],
             },
             colors: {
@@ -13,6 +15,9 @@ export default {
                 "default-light": "#FF9633",
                 "default-lighter": "#FFB366",
                 "default-dark": "#E66B00",
+                ink: "#050505",
+                paper: "#FFF7E8",
+                acid: "#B8FF58",
             },
             screens: {
                 sm: "620px",

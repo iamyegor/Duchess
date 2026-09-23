@@ -7,10 +7,11 @@ export default function HomePageAboutUs() {
     const { title, aboutUsContent } = useHomePageAboutUsTranslation();
 
     return (
-        <section className="bg-black text-white py-10">
+        <section className="du-section bg-[#050505] text-paper">
             <div className="container space-y-6">
                 <div className="max-w-5xl">
-                    <h1 className="text-3xl font-bold">{title}</h1>
+                    <span className="du-kicker">inside duchess</span>
+                    <h1 className="du-display text-6xl sm:text-8xl">{title}</h1>
                 </div>
                 <div className="w-full">
                     <ContentSwiper uniqueValue="about-us">

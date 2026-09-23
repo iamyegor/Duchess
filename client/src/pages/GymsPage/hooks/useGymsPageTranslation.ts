@@ -7,7 +7,7 @@ const translations = [
     },
     {
         locale: "ru",
-        gyms: "КЛУБЫ",
+        gyms: "GYMS",
     },
 ];
 

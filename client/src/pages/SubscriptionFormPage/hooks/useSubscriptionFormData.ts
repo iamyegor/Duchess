@@ -12,7 +12,8 @@ export default function useSubscriptionFormData({
     subscriptionPlaceholder: string;
 }) {
     const locations = useLocations();
-    const [searchParams, _setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
+    const searchParamsString = searchParams.toString();
     const [selectedCity, setSelectedCity] = useState<string>(locations[0].name);
     const [selectedGym, setSelectedGym] = useState<string>(gymPlaceholder);
     const [selectedSubscription, setSelectedSubscription] =
@@ -38,7 +39,7 @@ export default function useSubscriptionFormData({
         if (subscription) {
             setSelectedSubscription(subscription);
         }
-    }, [searchParams.toString()]);
+    }, [locations, searchParams, searchParamsString]);
 
     useEffect(() => {
         if (prevUiLanguage.current !== uiLanguage) {

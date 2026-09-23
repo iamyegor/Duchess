@@ -1,7 +1,10 @@
 export default function ContactPhoneNumber() {
     return (
-        <a href={`tel:+79999999999`} className="text-nowrap text-white hover:text-neutral-300">
-            +7 (999) 999 99 99
+        <a
+            href={`tel:+442079460958`}
+            className="text-nowrap text-sm font-bold text-paper hover:text-default"
+        >
+            +44 20 7946 0958
         </a>
     );
 }

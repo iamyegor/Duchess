@@ -6,10 +6,11 @@ export default function GymsPage() {
     const t = useGymsPageTranslation();
 
     return (
-        <div className="flex flex-col pt-4 lg:pt-24 bg-black h-full pb-8 lg:pb-0">
-            <DuchessLogo theme="light"/>
-            <div className="container pb-5">
-                <h3 className="text-5xl text-white font-semibold">{t.gyms}</h3>
+        <div className="du-page flex h-full flex-col pb-8 pt-4 lg:pb-0 lg:pt-28">
+            <DuchessLogo theme="light" />
+            <div className="container pb-8">
+                <span className="du-kicker">choose floor</span>
+                <h3 className="du-display text-7xl text-paper sm:text-9xl">{t.gyms}</h3>
             </div>
             <GymSelectMap />
         </div>

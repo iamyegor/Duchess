@@ -14,7 +14,7 @@ export default function CustomDialog({ isOpen, children, onClose, auxiliaryButto
         <MuiDialog open={isOpen} onClose={onClose}>
             <div className="space-y-5">
                 {children}
-                <hr className="border-neutral-800" />
+                <hr className="border-paper/10" />
                 <div
                     className={classNames("w-full flex justify-end", {
                         "!justify-between": auxiliaryButton,
@@ -23,9 +23,9 @@ export default function CustomDialog({ isOpen, children, onClose, auxiliaryButto
                     {auxiliaryButton}
                     <button
                         onClick={onClose}
-                        className="bg-default text-white rounded-xl px-6 py-2 font-medium hover:bg-default-dark focus:outline-none transition"
+                        className="du-button px-6 py-2 text-sm focus:outline-none"
                     >
-                        Закрыть
+                        Close
                     </button>
                 </div>
             </div>

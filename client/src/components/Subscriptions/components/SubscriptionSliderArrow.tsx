@@ -24,7 +24,7 @@ export default function SubscriptionSliderArrow({
         >
             <div
                 className={classNames(
-                    "bg-default w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-black flex justify-center items-center",
+                    "flex h-10 w-10 items-center justify-center rounded-sm border border-paper/15 bg-default shadow-[0_12px_35px_rgba(255,119,0,0.28)] sm:h-12 sm:w-12",
                     {
                         [`swiper-next-${uniqueValue}`]: direction === "right",
                         [`swiper-prev-${uniqueValue}`]: direction === "left",
